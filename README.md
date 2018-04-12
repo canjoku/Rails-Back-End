@@ -33,12 +33,12 @@ I am building a RESTful application using CRUD in Ruby on Rails. I hope to finis
 * Deploying to heroku
 
 ## FEATURES
-* MyPosts
+### MyPosts
 - Create / Edit / Destroy
 - Markdown Formatting
 - Comments (Disqus)
 
-* Contact
+### Contact
 - Contact Form
 - sendgrid (Emails)
 
