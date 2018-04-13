@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root to: 'blog/posts#index'
+
+  scope module: 'blog' do 
+    get 'contact/new'
+    get 'contact/create'
+    get 'about/index'
+    get 'categories/show'
+    get 'comments/new'
+    get 'posts/index'
+    get 'posts/show'
+  end
+
+  namespace :admin do
+    resources :posts, :users, :categories, :comments
+  end
+
 end
