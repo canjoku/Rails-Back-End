@@ -1,7 +1,8 @@
-class Admin::UsersController < AdminController
+class PostsController < ApplicationController
     def index
     end
 
     def show
     end
+
 end

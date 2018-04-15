@@ -9,17 +9,16 @@ end
 gem 'rails', '~> 5.1.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
-gem 'bootstrap-sass', '~> 3.3.7'
-gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.7'
+
 gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
-
+gem 'jquery-rails'
 # gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -27,12 +26,14 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :test do
-  gem 'capybara', '2.7.1'
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 group :development do

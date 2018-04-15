@@ -1,19 +1,9 @@
 Rails.application.routes.draw do
+    root 'posts#index'
 
-  root to: 'blog/posts#index'
+    resources :posts , only: [:index, :show]
 
-  scope module: 'blog' do 
-    get 'contact/new'
-    get 'contact/create'
-    get 'about/index'
-    get 'categories/show'
-    get 'comments/new'
-    get 'posts/index'
-    get 'posts/show'
-  end
-
-  namespace :admin do
-    resources :posts, :users, :categories, :comments
-  end
-
+    namespace :admin do
+        resources :posts, :users
+    end
 end
