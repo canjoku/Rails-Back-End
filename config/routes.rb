@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-    root 'posts#index'
+  root 'posts#index'
 
-    resources :posts , only: [:index, :show]
+  resources :posts , only: [:index, :show]
 
-    namespace :admin do
-        resources :posts, :users
-    end
+  namespace :admin do
+    resources :posts, :users
+  end
 end
