@@ -43,26 +43,27 @@ I am building a RESTful application using CRUD in Ruby on Rails. I hope to finis
 - sendgrid (Emails)
 
 ## MODELS
-* Post 
+### Post 
 - Title : string
+- Description: string
 - Body : text
 - Image : string
 - Description : string
 
-* User
+### User
 - Name : string
 - Email : string
 - Password_hash : string
 - Password_salt : string
 
 ## PAGES
-* Front End
-- Blog
+### Front End
+- Home
 - About
 - Contact
 
-* Back End
-- Blog
+### Back End
+- Home
 - About
 - Contact
-- MyPosts
+- Admin
