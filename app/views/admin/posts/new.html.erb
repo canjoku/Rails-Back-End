@@ -1,1 +1,5 @@
-<h1>The back end new page </h1>
+<%= provide(:page_title, "New Post") %>
+
+<h1 align= "center">Create New Post</h1>
+
+<%= render 'form', post: @post, url: admin_posts_url %>

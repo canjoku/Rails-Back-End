@@ -1,1 +1,13 @@
-<h1>The back index page </h1>
+<%= provide(:page_title, 'All Posts') %>
+
+<div class="row">
+  <div>
+    <%= link_to "New post", new_admin_post_path, class: 'btn btn-primary btn-md'%>
+  </div> <br /><br />
+  <table class="table">
+    <tr>
+      <th colspan="4">Title</th>
+    <tr>
+      <%= render @posts %>
+  <table>
+</div>
