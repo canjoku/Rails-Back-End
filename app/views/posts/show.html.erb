@@ -1,10 +1,23 @@
 <%= provide(:page_title, @post.title) %>
 
+<%= render 'shared/page_title', title: @post.title %>
+<hr>
+
 <div class="row">
-  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
-  <h1><%= @post.title %></h1>
-  <p><%= @post.display_day_published %></p>
-  <p><%= @post.description%></p>
-  <p><%= @post.body%></p>
+  <div class="col-md-1 col-lg-2"></div>
+  <div class="col-md-10 col-lg-8 text-xs-center">
+    <p><h6><%= @post.display_day_published %></h6></P>
+    <p><strong><%= @post.description.html_safe%></strong><p>
+    <p><%= @post.body.html_safe %><p>
+
+    <div class="author-biography">
+      <h4>Implement gravatar<h4>
+      <h4><%= @post.user.username %></h4>
+      <h6 class='bio'><%= @post.user.email %></h6>
+    </div>
+
+    <div>
+      <h6>This will contain comments functionality.</h6>
+    </div>
   </div>
 </div>

@@ -4,13 +4,13 @@
   <%= link_to 'Edit', edit_admin_post_path(@post), class: 'btn btn-sm btn-warning' %>
   <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
     confirm: 'Confirm delete action!'}, class: 'btn btn-sm btn-danger' %>
+  <%= render 'shared/page_title', title: @post.title %> <hr>
 </div>
 
 <div class="row">
   <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
-  <h1><%= @post.title %></h1>
   <p><%= @post.display_day_published %></p>
-  <p><%= @post.description%></p>
+  <p><strong><%= @post.description%></p></strong>
   <p><%= @post.body%></p>
   </div>
 </div>

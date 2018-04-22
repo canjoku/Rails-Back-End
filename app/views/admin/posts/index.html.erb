@@ -1,5 +1,9 @@
 <%= provide(:page_title, 'All Posts') %>
 
+<%= render 'shared/page_title', title: "All posts"%>
+
+<hr />
+
 <div class="row">
   <div>
     <%= link_to "New post", new_admin_post_path, class: 'btn btn-primary btn-md'%>
