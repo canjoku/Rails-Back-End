@@ -15,16 +15,12 @@ class Admin::PostsController < AdminController
   def create
     @post = Post.new(post_params)
     @post.user = User.first
-
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to admin_post_path(@post)}
-        format.json { render :show, status: :created, location: @post }
+        flash[:success] = "Post was succesfully created!"
+        redirect_to admin_post_path(@post)
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   def edit
@@ -32,21 +28,16 @@ class Admin::PostsController < AdminController
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_posts_url}
-      format.json { head :no_content }
-    end
+    flash[:success] = "Post was succesfully deleted!"
+    redirect_to admin_posts_url
   end
 
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to admin_post_path(@post)}
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+      flash[:success] = "Post was succesfully updated!"
+      redirect_to admin_post_path(@post)
+    else
+      render :edit
     end
   end
 
