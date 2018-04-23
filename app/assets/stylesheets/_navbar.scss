@@ -1,6 +1,6 @@
 
-#blog-header{
-  background: url('./bg.jpg') no-repeat;
+.blog-header{
+  background: image-url("bg.jpg");
   background-size: cover;
   background-origin: 0 60%;
   margin-bottom: 30px;
@@ -8,11 +8,11 @@
 
 .navbar {
   width: 100%;
-  background: none !important;
+  background: none;
 
 
   @media (max-width:34em) {
-    background: black !important;
+    background: black;
   }
 }
 

@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   def display_day_published
-    "Published #{created_at.strftime('%-b %-d, %Y')}"
+    "Published #{created_at.to_formatted_s(:long)}"
   end
 
 end

@@ -15,12 +15,12 @@ class Admin::PostsController < AdminController
   def create
     @post = Post.new(post_params)
     @post.user = User.first
-      if @post.save
-        flash[:success] = "Post was succesfully created!"
-        redirect_to admin_post_path(@post)
-      else
-        render :new
-      end
+    if @post.save
+      flash[:success] = "Post was succesfully created!"
+      redirect_to admin_post_path(@post)
+    else
+      render :new
+    end
   end
 
   def edit

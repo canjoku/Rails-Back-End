@@ -1,17 +1,16 @@
 <%= provide(:page_title, 'All Posts') %>
 
-<%= render 'shared/page_title', title: "All posts"%>
-
-<hr />
+<h1 align="center">All Posts</h1>
+<hr>
 
 <div class="row">
   <div>
-    <%= link_to "New post", new_admin_post_path, class: 'btn btn-primary btn-md'%>
-  </div> <br /><br />
+    <%= link_to "New post", new_admin_post_path, class: 'btn btn-secondary btn-sm'%>
+  </div>
   <table class="table">
     <tr>
       <th colspan="4">Title</th>
-    <tr>
-      <%= render @posts %>
-  <table>
+    </tr>
+    <%= render @posts %>
+  </table>
 </div>
