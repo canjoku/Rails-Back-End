@@ -2,17 +2,16 @@
 <html>
 
 <head>
-  <title>MyBlog</title>
+  <title>
+    <%= yield(:page_title) %> | Tony's Blog %>
+  </title>
   <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
 <body>
-
-  <div class='container'>
-    Post page layout. This should be red
+  <%= render 'layouts/navbar' %>
+  <div class="container <%= controller_name%> <%= action_name %>">
     <%= yield %>
   </div>
 </body>

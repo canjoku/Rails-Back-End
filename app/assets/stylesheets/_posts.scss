@@ -1,0 +1,74 @@
+.posts.index {
+  .card {
+    border: none;
+    border-radius: 0;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+    .card-top {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .card-block {
+      padding: 10px;
+      .card-title {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+      .date-published {
+        font-size: 0.8rem;
+        color: $green;
+        font-weight: 300;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+      }
+      .card-text {
+        font-size: 0.9rem;
+        color: black;
+      }
+
+    }
+  }
+}
+
+.posts.show {
+  .author-biography {
+    padding: 15px 45px;
+    margin: 30px 0;
+    h4 {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    h6 {
+      font-weight: 300;
+      font-size: 16px
+    }
+  }
+}
+
+@media screen and (min-width: 34em) {
+  .posts.index .card {
+    height: 440px;
+  }
+}
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+  .posts.index .card {
+    height: 420px;
+  }
+}
+
+/* Extra large. Above 75em (1200px) */
+@media screen and (min-width: 75em) {
+  .posts.index .card {
+    height: 415px;
+  }
+}

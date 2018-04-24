@@ -1,0 +1,75 @@
+<%= form_for(post, url: url) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <% if @post.new_record? %>
+          <h1 align="center">New Post</h1>
+        <% else %>
+          <h1 align="center"><%= "Editing: #{@post.title}" %><hr>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.label :title %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.label :banner_image_url %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :banner_image_url, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.label :description %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_area :description, rows: 4, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.label :body %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_area :body, rows: 12, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <%= f.submit class: 'btn btn-primary btn-xlarge' %>
+            <% if @post.persisted? %>
+              <%= link_to 'Show', @post, class: "btn btn-info"%>
+            <% end %>
+            <%= link_to 'Back', admin_posts_path, class: "btn btn-warning" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

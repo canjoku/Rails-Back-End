@@ -1,0 +1,33 @@
+$green:             #00FFC4;
+$light-gray:        #f7f7f9;
+$dark-blue:         #1976D2;
+$light-blue:        #2196F3;
+$extra-light-blue:  #BBDEFB;
+$text-color-light:  #FFFFFF;
+$yellow:            #CDDC39;
+$text-color-dark:   #212121;
+$text-color-gray:   #757575;
+$card-color:        #BDBDBD;
+
+$primary: $green;
+$secondary:  $dark-blue;
+$warning: $yellow;
+$info: $light-blue;
+$link-color:    $text-color-dark;
+$body-bg : #E6FFF7;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 9)
+), $spacers);
+
+
+
+
