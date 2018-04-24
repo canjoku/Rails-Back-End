@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-1 col-lg-2"></div>
   <div class="col-md-10 col-lg-8 text-xs-center">
-    <p><h6><%= @post.display_day_published %></h6></P>
+    <p><h6>Published <%= time_ago_in_words(@post.created_at) %> ago</h6></P>
     <p><strong><%= @post.description.html_safe%></strong><p>
     <p><%= @post.body.html_safe %><p>
     <div class="author-biography">

@@ -9,8 +9,4 @@ class Post < ApplicationRecord
   validates :banner_image_url, presence: true
   belongs_to :user
 
-  def display_day_published
-    "Published #{created_at.to_formatted_s(:long)}"
-  end
-
 end
