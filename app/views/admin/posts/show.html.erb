@@ -1,6 +1,6 @@
 <%= provide(:page_title, @post.title) %>
 
-<div class>
+<div>
   <%= link_to 'Edit', edit_admin_post_path(@post), class: 'btn btn-sm btn-warning' %>
   <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
     confirm: 'Are you absolutely sure you want to delete?'}, class: 'btn btn-sm btn-danger' %>
