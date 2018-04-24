@@ -9,15 +9,14 @@
       </ul>
     </div>
   <% end %>
-
   <div class="row">
     <div class="col-md-12">
       <div>
-          <% if @post.new_record? %>
-            <h1 align="center">New Post</h1>
-          <% else %>
-            <h1 align="center"><%= "Editing: #{@post.title}" %><hr>
-          <% end %>
+        <% if @post.new_record? %>
+          <h1 align="center">New Post</h1>
+        <% else %>
+          <h1 align="center"><%= "Editing: #{@post.title}" %><hr>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="row">
