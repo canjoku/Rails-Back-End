@@ -1,16 +1,17 @@
-class Admin::UsersController < AdminController
+class UsersController < ApplicationController
   before_action :set_user, only: [:show]
-  def index
-    @users = User.all
+
+  def new
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome #{@user.username} to Tony's Blog App!"
-      redirect_to admin_user_path(@user)
+      redirect_to user_path(@user)
     else
-      redirect_to new_user_path
+      render :new
     end
   end
 

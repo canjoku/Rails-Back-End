@@ -1,0 +1,15 @@
+<h1 align="center"><%= (@user.username).capitalize %>'s Profile </h1><hr>
+
+<div class="row">
+  <div class="col-md-4 offset-md-4 center">
+    <p><%= image_tag avatar_url(@user) %></p>
+  </div>
+</div>
+
+<div class="row">
+  <ul>
+    <% @user.posts.each do |post| %>
+      <li><%= post.title %></li>
+    <% end %>
+  </ul>
+</div>

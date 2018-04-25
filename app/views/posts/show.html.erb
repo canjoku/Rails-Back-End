@@ -10,9 +10,10 @@
     <p><strong><%= @post.description.html_safe%></strong><p>
     <p><%= @post.body.html_safe %><p>
     <div class="author-biography">
-      <p><%= gravatar_for(@post.user.username) %></p>
+      <strong>Author<strong>
       <h6><%= @post.user.username %></h6>
       <h4><%= @post.user.email %></h4>
+      <p><%= image_tag avatar_url(@post.user) %></p>
     </div>
     <div>
       <h6>This will contain comments functionality.</h6>

@@ -15,8 +15,13 @@ RSpec.describe User, type: :model do
       expect(user.save).to eq(false)
     end
 
-    it "should be succesfully saved" do
+    it "users should be succesfully saved" do
       expect(user.save).to eq(true)
+    end
+
+    it "ensures the presence of a password" do
+      user.password = nil
+      expect(user.save).to eq(false)
     end
   end
 end

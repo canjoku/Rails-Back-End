@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  resources :posts
+  resources :posts, only: [:index, :show]
+  resources :users, only: [:new, :show, :create]
   get 'about' => 'pages#about', as: :about
   get 'contact' => 'pages#contact', as: :contact
-  get 'signin' => 'pages#signin', as: :signin
 
   namespace :admin do
-    resources :posts, :users
+    resources :posts
+    resources :users, exept: [:new, :show]
   end
 end

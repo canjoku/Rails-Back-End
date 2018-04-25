@@ -1,2 +1,16 @@
-<%= provide(:page_title, "All users") %>
+<%= provide(:page_title, 'All Users') %>
 
+<h1 align="center">All Posts</h1>
+<hr>
+
+<div class="row">
+  <div>
+    <%= link_to "New user", new_user_path, class: 'btn btn-secondary btn-sm'%>
+  </div>
+  <table class="table">
+    <tr>
+      <th colspan="4">Title</th>
+    </tr>
+    <%= render @users %>
+  </table>
+</div>
