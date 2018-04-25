@@ -1,0 +1,17 @@
+<%= provide(:page_title, 'All users') %>
+<h1 align="center">Showing all Bloggers</h1><hr>
+
+<div align="center">
+  <% @users.each do |user|%>
+    <ul class="listing">
+      <div class="row">
+        <div class="card col-md-4 offset-md-4">
+          <li><%= link_to (image_tag avatar_url(user)), user_path(user) %></li>
+          <li class="user-name text-primary"><%= link_to user.username.capitalize, user_path(user) %></li>
+          <li><small><%= pluralize(user.posts.count, "post") if user.posts%></small></li>
+          <li></li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>

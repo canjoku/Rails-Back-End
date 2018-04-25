@@ -1,15 +1,15 @@
 <h1 align="center"><%= (@user.username).capitalize %>'s Profile </h1><hr>
 
+
 <div class="row">
-  <div class="col-md-4 offset-md-4 center">
+  <div class="author-biography">
+    <h6><%= @user.username %></h6>
+    <h4><%= @user.email %></h4>
     <p><%= image_tag avatar_url(@user) %></p>
   </div>
 </div>
 
+<h4 align="center"><%= @user.username%>'s Posts </h4>
 <div class="row">
-  <ul>
-    <% @user.posts.each do |post| %>
-      <li><%= post.title %></li>
-    <% end %>
-  </ul>
+  <%= render 'posts/post', post: @user.posts %>
 </div>

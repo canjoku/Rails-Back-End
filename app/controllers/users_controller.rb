@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :edit, :update]
 
+  def index
+    @users = User.all
+  end
   def new
     @user = User.new
   end
@@ -16,6 +19,18 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "User profile was succesfully updated!"
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   private

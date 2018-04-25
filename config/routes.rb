@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :posts, only: [:index, :show]
-  resources :users, only: [:new, :show, :create]
-  get 'about' => 'pages#about', as: :about
+  resources :users, except: [:destroy]
   get 'contact' => 'pages#contact', as: :contact
 
   namespace :admin do
     resources :posts
-    resources :users, exept: [:new, :show]
+    resources :users, except: [:new, :show]
   end
 end
