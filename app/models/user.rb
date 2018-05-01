@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 
+  default_scope -> { order(id: :asc) }
   has_secure_password
   before_save { self.email = email.downcase }
-  has_many :posts
+  has_many :posts, dependent: :destroy
   validates :username, presence: true, length: {minimum: 2}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:true, length: {maximum: 200},

@@ -1,8 +1,8 @@
 class Admin::UsersController < AdminController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :destroy]
 
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 6)
   end
 
   def create
@@ -16,6 +16,12 @@ class Admin::UsersController < AdminController
   end
 
   def show
+  end
+
+  def destroy
+    @user.destroy
+    flash[:success] = "User and associated posts were succesfully deleted!"
+    redirect_to admin_users_url
   end
 
   private
