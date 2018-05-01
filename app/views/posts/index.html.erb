@@ -3,9 +3,11 @@
 <div class="container pagination justify-content-center" >
   <%= will_paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>
+
 <div class="row">
   <%= render 'post', post: @posts %>
 </div>
+
 <div class="container pagination justify-content-center" >
   <%= will_paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>

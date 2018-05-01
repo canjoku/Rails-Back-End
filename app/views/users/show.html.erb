@@ -10,12 +10,15 @@
 </div>
 
 <h4 align="center"><%= @user.username%>'s Posts </h4>
+
 <div class="container pagination justify-content-center" >
   <%= will_paginate @user_posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>
+
 <div class="row">
   <%= render 'posts/post', post: @user_posts %>
 </div>
+
 <div class="container pagination justify-content-center" >
   <%= will_paginate @user_posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>
