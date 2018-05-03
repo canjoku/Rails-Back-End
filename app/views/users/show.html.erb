@@ -1,4 +1,4 @@
-<h1 align="center"><%= (@user.username).capitalize %>'s Profile </h1><hr>
+<h1><%= (@user.username).capitalize %>'s Profile </h1><hr>
 
 
 <div class="row">
@@ -9,14 +9,14 @@
   </div>
 </div>
 
-<h4 align="center"><%= @user.username%>'s Posts </h4>
+<h4><%= @user.username%>'s Posts </h4>
 
 <div class="container pagination justify-content-center" >
   <%= will_paginate @user_posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>
 
 <div class="row">
-  <%= render 'posts/post', post: @user_posts %>
+  <%= render @user.posts %>
 </div>
 
 <div class="container pagination justify-content-center" >

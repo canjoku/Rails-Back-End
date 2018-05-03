@@ -7,10 +7,10 @@ RSpec.feature "Creating Posts" do
 
     click_link "New post"
 
-    fill_in "Title", with: "#{Faker::Lorem.words}"
+    fill_in "Title", with: "#{Faker::Lorem.word}"
     fill_in "Banner image url", with: "#{Faker::Internet.url}"
-    fill_in "Description", with: "#{Faker::Lorem.sentences}"
-    fill_in "Body", with: "#{Faker::Lorem.paragraphs}"
+    fill_in "Description", with: "#{Faker::Lorem.sentence}"
+    fill_in "Body", with: "#{Faker::Lorem.paragraph}"
 
     click_button "Create Post"
 

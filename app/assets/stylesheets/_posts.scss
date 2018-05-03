@@ -36,6 +36,11 @@
     }
   }
 }
+.posts.show, .users.show, .posts.index, .users.index, .users.new, .users.edit{
+  h1, h4{
+    text-align: center;
+  }
+}
 
 .posts.show, .users.show {
   .author-biography {
@@ -48,11 +53,14 @@
     }
     h6 {
       font-weight: 300;
-      font-size: 16px
+      font-size: 16px;
     }
   }
 }
 .users.index {
+  .user-wrapper, h1{
+    text-align: center;
+  }
   .card {
     border: none;
     border-radius: 0;

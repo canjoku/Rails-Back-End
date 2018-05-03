@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
-  default_scope -> { order(id: :asc) }
+  def self.default_scope
+    order(username: :asc)
+  end
+
   has_secure_password
   before_save { self.email = email.downcase }
   has_many :posts, dependent: :destroy
@@ -9,6 +12,7 @@ class User < ApplicationRecord
   validates :email, presence:true, length: {maximum: 200},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
+  validates :password, length: { minimum: 8}, allow_nil: true
 
 end
 

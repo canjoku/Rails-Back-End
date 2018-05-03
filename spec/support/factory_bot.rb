@@ -14,7 +14,7 @@ FactoryBot.define do
         title {Faker::Lorem.word}
         description {Faker::Lorem.sentence}
         banner_image_url {Faker::Internet.url}
-        body {Faker::Lorem.paragraphs}
+        body {Faker::Lorem.paragraph}
         user_id {Faker::Number.digit}
     end
 end

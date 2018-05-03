@@ -22,10 +22,7 @@ gem 'jquery-rails'
 # gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.1'
-gem 'will_paginate-bootstrap4'
-gem 'bootstrap_form'
-gem 'bootstrap4-kaminari-views'
-gem 'kaminari'
+gem 'will_paginate-bootstrap4', '~> 0.2.2'
 
 # gem 'capistrano-rails', group: :development
 gem 'dotenv-rails'
