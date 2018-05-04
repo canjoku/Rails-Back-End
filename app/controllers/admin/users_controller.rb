@@ -2,7 +2,8 @@ class Admin::UsersController < AdminController
   before_action :set_user, only: [:show, :destroy]
 
   def index
-    @users = User.paginate(page: params[:page], per_page: 6)
+    @paginate = User.paginate(page: params[:page], per_page: 6)
+    @users = @paginate.sort_by_username
   end
 
   def create

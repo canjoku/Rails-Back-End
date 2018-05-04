@@ -2,7 +2,8 @@ class Admin::PostsController < AdminController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 6)
+    @paginate = Post.paginate(page: params[:page], per_page: 6)
+    @posts = @paginate.by_date
   end
 
   def show
@@ -14,7 +15,7 @@ class Admin::PostsController < AdminController
 
   def create
     @post = Post.new(post_params)
-    @post.user = User.third
+    @post.user = User.first
     if @post.save
       flash[:success] = "Post was succesfully created!"
       redirect_to admin_post_path(@post)
