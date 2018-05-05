@@ -28,7 +28,7 @@ gem 'will_paginate-bootstrap4', '~> 0.2.2'
 gem 'dotenv-rails'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', '~> 10.0', '>= 10.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   gem 'faker', '~> 1.6', '>= 1.6.6'
@@ -45,4 +45,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', '~> 1.2018', '>= 1.2018.4', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
