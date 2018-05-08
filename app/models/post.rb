@@ -1,12 +1,10 @@
 class Post < ApplicationRecord
 
-  def self.by_date
-    order("created_at DESC")
-  end
+  scope :most_recent, -> { order(created_at: :desc) }
 
   validates :title, presence: true
-  validates :description, presence: true, length: { minimum: 50, maximum: 1200 }
-  validates :body, presence: true, length: { minimum: 10, maximum: 5000 }
+  validates :description, presence: true
+  validates :body, presence: true
   validates :user_id, presence: true
   validates :banner_image_url, presence: true
   belongs_to :user
