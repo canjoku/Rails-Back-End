@@ -1,7 +1,6 @@
 <%= provide(:page_title, @post.title) %>
 
-<h1 align="center"><%= (@post.title).capitalize %> </h1>
-<hr>
+<h1 class="text.capitalize"><%= @post.title %></h1><hr>
 
 <div class="row">
   <div class="col-md-1 col-lg-2"></div>
@@ -10,12 +9,13 @@
     <p><strong><%= @post.description.html_safe%></strong><p>
     <p><%= @post.body.html_safe %><p>
     <div class="author-biography">
-      <p><%= gravatar_for(@post.user.username) %></p>
+      <strong>Author<strong>
       <h6><%= @post.user.username %></h6>
       <h4><%= @post.user.email %></h4>
+      <p><%= image_tag avatar_url(@post.user) %></p>
     </div>
     <div>
-      <h6>This will contain comments functionality.</h6>
+      <h6>This will contain commenting functionality.</h6>
     </div>
   </div>
 </div>

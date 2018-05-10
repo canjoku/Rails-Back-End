@@ -1,0 +1,30 @@
+<%= provide(:page_title, 'All users') %>
+<h1>Showing all Bloggers</h1><hr>
+<div class="container pagination justify-content-center" >
+  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
+</div>
+
+<div class="user-wrapper">
+  <% @users.each do |user| %>
+    <ul class="listing">
+      <div class="row">
+        <div class="card col-md-4 offset-md-4">
+          <%= link_to(user) do %>
+            <%= image_tag avatar_url(user) %>
+          <% end %>
+          <li class="user-name text-primary">
+            <%= link_to(user) do %>
+              <%= user.username %>
+            <% end %>
+          </li>
+          <li><small><%= pluralize(user.posts.count, "post") if user.posts %></small></li>
+          <li></li>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</div>
+
+<div class="container pagination justify-content-center" >
+  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
+</div>

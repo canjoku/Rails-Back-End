@@ -23,5 +23,10 @@ RSpec.describe Post, type: :model do
     it "posts should be succesfully saved" do
       expect(post.save).to eq(true)
     end
+
+    it "ensures the presence of a banner image url" do
+      post.banner_image_url = ""
+      expect(post.save).to eq(false)
+    end
   end
 end
