@@ -1,6 +1,6 @@
 <%= provide(:page_title, @post.title) %>
 
-<h1><%= @post.title %></h1><hr>
+<h1 class="heading"><%= @post.title %></h1><hr>
 
 <div class="row">
   <div class="col-md-1 col-lg-2"></div>
@@ -8,10 +8,10 @@
     <p><h6>Published <%= time_ago_in_words(@post.created_at) %> ago</h6></P>
     <p><strong><%= @post.description.html_safe%></strong><p>
     <p><%= @post.body.html_safe %><p>
-    <div class="authorBiography">
+    <div class="author-biography">
       <strong>Author<strong>
-      <h6><%= @post.user.username %></h6>
-      <h4><%= @post.user.email %></h4>
+      <h6 class="author-biography__username"><%= @post.user.username %></h6>
+      <h4 class="author-biography__email"><%= @post.user.email %></h4>
       <p><%= image_tag avatar_url(@post.user) %></p>
     </div>
     <div>

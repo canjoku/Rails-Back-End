@@ -1,6 +1,8 @@
 @import "variables";
-@import "mixins";
-@import "navbar";
-@import "home";
-@import "views";
+@import "components/c-navbar.scss";
+@import "components/c-home.scss";
+@import "components/c-post.scss";
+@import "components/c-author.scss";
+@import "components/c-user.scss";
+@import "main";
 @import "bootstrap";

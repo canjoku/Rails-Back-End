@@ -1,0 +1,37 @@
+@mixin user-component {
+  .admin-users-table {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .user-wrapper{
+    text-align: center;
+    &__listing {
+      list-style: none;
+      padding-left: 0;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__card {
+      border: none;
+      border-radius: 0;
+      height: 150px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      background-color: white;
+    }
+
+    &__username {
+      font-weight: bold;
+      font-size: 1.25em;
+      color: $green;
+    }
+  }
+}
