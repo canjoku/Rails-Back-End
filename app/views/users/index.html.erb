@@ -4,21 +4,20 @@
   <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
 </div>
 
-<div class="user-wrapper">
+<div class="userWrapper">
   <% @users.each do |user| %>
-    <ul class="listing">
+    <ul class="userWrapper__listing">
       <div class="row">
-        <div class="card col-md-4 offset-md-4">
+        <div class="userWrapper__card col-md-4 offset-md-4">
           <%= link_to(user) do %>
             <%= image_tag avatar_url(user) %>
           <% end %>
-          <li class="user-name text-primary">
+          <li class="userWrapper__userName text-primary">
             <%= link_to(user) do %>
               <%= user.username %>
             <% end %>
           </li>
           <li><small><%= pluralize(user.posts.count, "post") if user.posts %></small></li>
-          <li></li>
         </div>
       </div>
     </ul>

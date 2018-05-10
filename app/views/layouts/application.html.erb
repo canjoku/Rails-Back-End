@@ -11,7 +11,7 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
-  <div class="container <%= controller_name%> <%= action_name %>">
+  <div class="container <%= controller_name%><%= action_name.capitalize %>">
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
   </div>

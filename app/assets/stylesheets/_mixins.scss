@@ -1,0 +1,120 @@
+@mixin pageHeaders {
+
+  h1,h4 {
+    text-align: center;
+  }
+}
+
+@mixin postLayout {
+
+  @include pageHeaders;
+
+  .adminPostsPage {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .card {
+    border: none;
+    border-radius: 0;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+
+    &__cardTop {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &__cardBlock {
+      padding: 10px;
+    }
+
+    &__cardTitle {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      color: black;
+      text-align: center;
+      text-decoration-line: none;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__datePublished {
+      font-size: 0.8rem;
+      color:$green;
+      font-weight: 300;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    &__cardText {
+      font-size: 0.9rem;
+      color: black;
+    }
+  }
+}
+
+@mixin authorLayout {
+
+  @include pageHeaders;
+
+  .authorBiography {
+    padding: 15px 45px;
+    margin: 30px 0;
+
+    h6 {
+      font-weight: 300;
+      font-size: 16px;
+    }
+
+    h4 {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+}
+
+@mixin userLayout {
+
+  @include pageHeaders;
+
+  .adminUsersPage {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .userWrapper{
+
+    text-align: center;
+
+    &__listing {
+      list-style: none;
+      padding-left: 0;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &__card {
+      border: none;
+      border-radius: 0;
+      height: 150px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      background-color: white;
+    }
+
+    &__userName {
+      font-weight: bold;
+      font-size: 1.25em;
+      color: $green;
+    }
+  }
+}
