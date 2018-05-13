@@ -1,8 +1,5 @@
-@import "variables";
-@import "components/c-navbar.scss";
-@import "components/c-home.scss";
-@import "components/c-post.scss";
-@import "components/c-author.scss";
-@import "components/c-user.scss";
-@import "main";
-@import "bootstrap";
+@import "helpers/_variables";
+@import "base/containers";
+@import "base/reset";
+@import "components/button";
+@import "components/post";

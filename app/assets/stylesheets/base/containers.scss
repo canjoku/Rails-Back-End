@@ -1,0 +1,16 @@
+.b-posts-container {
+  display: -webkit-flex;
+  -webkit-box: 1;
+  display: flex;
+
+  /* small screen. Above 34em */
+  @media screen and (min-width: 800px) {
+    flex-flow: row, wrap;
+  }
+
+  /* Medium. Above 48em (768px) */
+  @media screen and (max-width: 500px) {
+      flex-flow: column;
+  }
+
+}

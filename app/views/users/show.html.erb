@@ -16,7 +16,7 @@
 </div>
 
 <div class="row">
-  <%= render @user.posts %>
+  <%= render partial: "shared/post", collection: @user.posts %>
 </div>
 
 <div class="container pagination justify-content-center" >
