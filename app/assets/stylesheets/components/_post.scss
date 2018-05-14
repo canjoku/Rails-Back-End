@@ -1,12 +1,11 @@
 .c-post {
-  box-shadow: 0px 0px 2px rgba(0,0,0,0.9),
-    1px 1px 5px rgba(0,0,0,.3);
+  box-shadow: var(--dark-shadow);
   width: auto;
-  background: $card-color;
+  background: var(--card-color);
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 
   &__image {
     height: 200px;
@@ -23,15 +22,15 @@
   &__title {
     font-size: 1.3rem;
     margin-bottom: 0;
-    a {
-      color: $text-color-dark;
-    }
     text-align: center;
+    a {
+      color: var(--text-color-blue);
+    }
   }
 
   &__date-published {
     font-size: 0.8rem;
-    color:$text-color-blue;
+    color:var(--text-color-blue);
     font-weight: 300;
     text-align: left;
     margin-top: 0.3rem;
@@ -40,6 +39,5 @@
   &__description {
     font-size: 0.9rem;
     text-align: left;
-    color: $text-color-gray;
   }
 }
