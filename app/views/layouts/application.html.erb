@@ -6,10 +6,17 @@
     <%= yield(:page_title) %> | Tony's Blog
   </title>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application',
+    "https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400",
+    media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application',
+    "https://use.fontawesome.com/releases/v5.0.13/css/all.css",
+    media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+  <%= render "layouts/navbar" %>
   <%= render 'layouts/flash_messages' %>
   <%= yield %>
 </body>
