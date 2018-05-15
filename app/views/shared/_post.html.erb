@@ -9,7 +9,7 @@
     <h5 class="c-post__date-published">Published <%= time_ago_in_words(post.created_at)%> ago</h5>
     <p class="c-post__description"><%= truncate(post.description, length: 140) %></p>
 
-    <button class="c-btn c-btn__btn-blue">
+    <button class="o-btn o-btn__btn-blue">
       <%= link_to 'Read', post %>
     </button>
 

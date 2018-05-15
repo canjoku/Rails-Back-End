@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
   const navHamburger = $('#navHamburger')
   navHamburger.click(function (e) {
     e.preventDefault()
