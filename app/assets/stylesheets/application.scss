@@ -1,9 +1,12 @@
 @import "base/variables";
 @import "base/reset";
 
-@import "containers/posts-container";
+@import "layouts/l-posts-container";
 
-@import "components/nav";
-@import "components/banner";
-@import "objects/button";
-@import "components/post";
+@import "objects/o-button";
+
+@import "components/c-nav";
+@import "components/c-banner";
+@import "components/c-post";
+
+

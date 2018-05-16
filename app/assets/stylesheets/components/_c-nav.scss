@@ -1,5 +1,8 @@
 .c-nav {
-  background: var(--color-dark-blue);
+
+  &__background {
+    background: var(--color-dark-blue);
+  }
 
   div {
     display: none;

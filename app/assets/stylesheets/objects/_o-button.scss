@@ -17,12 +17,12 @@
   }
   transition: all .4s;
 
-  &__btn-blue {
+  &__btn--blue {
     background-color: var(--color-dark-blue);
     border-color: var(--color-dark-blue);
   }
 
-  &__btn-blue:hover {
+  &__btn--blue:hover {
     background-color: var(--text-color-light);
     border-color: var(--text-color-light);
     a{
@@ -30,12 +30,12 @@
     }
   }
 
-  &__btn-gray {
+  &__btn--gray {
     background-color: var(--text-color-gray);
     border-color: var(--text-color-gray);
   }
 
-  &__btn-gray:hover {
+  &__btn--gray:hover {
     background-color: var(--text-color-light);
     border-color: var(--text-color-light);
     a{
@@ -43,12 +43,12 @@
     }
   }
 
-  &__btn-green {
+  &__btn--green {
     background-color: var(--text-color-green);
     border-color: var(--text-color-green);
   }
 
-  &__btn-green:hover {
+  &__btn--green:hover {
     background-color: var(--text-color-light);
     border-color: var(--text-color-light);
     a{
@@ -56,12 +56,12 @@
     }
   }
 
-  &__btn-dark {
+  &__btn--dark {
     background-color: var(--text-color-dark);
     border-color: var(--text-color-dark);
   }
 
-  &__btn-dark:hover {
+  &__btn--dark:hover {
     background-color: var(--text-color-light);
     border-color: var(--text-color-light);
     a{
@@ -69,12 +69,12 @@
     }
   }
 
-  &__btn-pink {
+  &__btn--pink {
     background-color: var(--color-pink-dark);
     border-color: var(--color-pink-dark);
   }
 
-  &__btn-red:hover {
+  &__btn--red:hover {
     background-color: var(--text-color-light);
     border-color: var(--text-color-light);
     a{
