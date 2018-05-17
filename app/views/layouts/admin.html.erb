@@ -10,11 +10,7 @@
   <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
-  <div class='container <%= controller_name %>-<%= action_name %>'>
-    <%= render 'layouts/flash_messages' %>
-    <%= yield %>
-  </div>
+  <%= yield %>
 </body>
 
 </html>
