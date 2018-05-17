@@ -8,5 +8,3 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import navHamburger from '../hamburger'
-
-navHamburger()

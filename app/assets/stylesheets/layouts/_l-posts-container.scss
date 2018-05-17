@@ -1,12 +1,13 @@
 .l-posts-container {
   display: grid;
-  grid-gap: 2px;
-  grid-auto-rows: 400px;
+  grid-gap: 1px;
+  grid-auto-rows: 410px;
 }
 
 @media (max-width: 48em) {
   .l-posts-container {
     grid-template-columns: repeat(1fr);
+    grid-auto-rows: 430px;
   }
 }
 

@@ -1,0 +1,16 @@
+.c-user {
+  box-shadow: var(--dark-shadow);
+  background: var(--card-color);
+  text-align: center;
+  margin: 8px;
+
+  &__username {
+    a {
+      color: var(--color-dark-blue);
+    }
+  }
+
+  &__posts {
+    color: var(--color-pink-light)
+  }
+}

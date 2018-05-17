@@ -2,11 +2,16 @@
 @import "base/reset";
 
 @import "layouts/l-posts-container";
+@import "layouts/l-paginate";
+@import "layouts/l-users-container";
 
 @import "objects/o-button";
 
 @import "components/c-nav";
 @import "components/c-banner";
 @import "components/c-post";
+@import "components/c-show-post";
+@import "components/c-user";
+@import "components/c-show-user";
 
 

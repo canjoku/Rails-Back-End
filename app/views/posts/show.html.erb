@@ -1,23 +1,27 @@
 <%= provide(:page_title, @post.title) %>
 
-<h1 class="heading"><%= @post.title %></h1><hr>
-
-<div class="row">
-  <div class="col-md-1 col-lg-2"></div>
-  <div class="col-md-10 col-lg-8 text-xs-center">
-    <p><h6>Published <%= time_ago_in_words(@post.created_at) %> ago</h6></P>
-    <p><strong><%= @post.description.html_safe%></strong><p>
-    <p><%= @post.body.html_safe %><p>
-    <div class="author-biography">
-      <strong>Author<strong>
-      <h6 class="author-biography__username"><%= @post.user.username %></h6>
-      <h4 class="author-biography__email"><%= @post.user.email %></h4>
-      <p><%= image_tag avatar_url(@post.user) %></p>
-    </div>
-    <div>
-      <h6>This will contain commenting functionality.</h6>
-    </div>
+<div class="c-show-post">
+  <div class=c-show-post__title>
+    <h1><%= @post.title %></h1>
+  </div>
+  <div class="c-show-post__date-published">
+    <h5>Published <%= time_ago_in_words(@post.created_at) %> ago</h5><hr>
+  </div>
+  <div class=c-show-post__description>
+    <h3>Description</h3>
+    <p><%= @post.description.html_safe%></p>
+  </div>
+  <div class="c-show-post__body">
+    <h3>Main content</h3>
+    <p><%= @post.body.html_safe %></p>
+  </div>
+  <div class="c-show-post__author">
+    <h6 class="c-show-post__author-username"> <%= @post.user.username %> </h6>
+    <h4 class="c-show-post__author-email"> <%= @post.user.email %> </h4>
+    <section class="c-show-post__author-avatar"> <%= image_tag avatar_url(@post.user) %> </section>
   </div>
 </div>
+
+
 
 

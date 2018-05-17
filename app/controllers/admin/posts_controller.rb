@@ -14,7 +14,7 @@ class Admin::PostsController < AdminController
 
   def create
     @post = Post.new(post_params)
-    @post.user = User.first
+    @post.user = User.second
     if @post.save
       flash[:success] = "Post was succesfully created!"
       redirect_to admin_post_path(@post)

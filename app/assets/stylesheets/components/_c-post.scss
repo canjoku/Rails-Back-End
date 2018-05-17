@@ -1,9 +1,8 @@
 .c-post {
   box-shadow: var(--dark-shadow);
   background: var(--card-color);
-  font-size: 1.6rem;
   text-align: center;
-  margin: 10px;
+  margin: 8px;
 
   &__image {
     height: 200px;
@@ -28,10 +27,11 @@
   &__date-published {
     color:var(--color-pink-light);
     text-align: left;
-    margin-top: 4.8px;
-    margin-bottom: 4.8px;;
+    margin-top: 3.0px;
+    margin-bottom: 3.0px;;
   }
   &__description {
     text-align: justify;
+    margin: 7px;
   }
 }
