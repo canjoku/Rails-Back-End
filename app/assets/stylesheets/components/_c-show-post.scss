@@ -1,6 +1,6 @@
 .c-show-post {
   display: grid;
-  padding: 10px;
+  padding: 0.625em;
 
   &__title {
     margin-bottom: 0;
@@ -10,8 +10,8 @@
   &__date-published {
     color:var(--color-pink-light);
     text-align: left;
-    margin-top: 3.0px;
-    margin-bottom: 3.0px;;
+    margin-top: 0.1875em;
+    margin-bottom: 0.1875em;
   }
 
   &__description, &__body {
@@ -21,14 +21,14 @@
     box-shadow: var(--dark-shadow);
     background: var(--card-color);
     text-align: justify;
-    margin: 10px;
-    padding: 10px;
+    margin: 0.625em;
+    padding: 0.625em;
   }
 
   &__author {
     text-align: justify;
-    margin: 10px;
-    padding: 10px;
+    margin: 0.625em;
+    padding: 0.625em;
   }
 }
 @media (max-width: 48em) {

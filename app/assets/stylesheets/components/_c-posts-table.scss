@@ -1,0 +1,78 @@
+.c-posts-table {
+  border: 3px solid var(--color-dark-blue);
+  width: 100%;
+  padding: 0.825em;
+  table-layout: fixed;
+  text-align: left;
+
+
+  &__head--title {
+    width: 25%;
+    font-size: 1.25rem;
+
+  }
+  &__head--date-posted {
+    width: 20%;
+    font-size: 1.25rem;
+  }
+
+  &__head--author {
+    width: 25%;
+    font-size: 1.25rem;
+  }
+
+  &__head-btn--create {
+    background: var(--color-dark-blue);
+    text-transform: uppercase;
+    border: 0;
+    width: 15%;
+    text-align: center;
+    a {
+      color: white;
+    }
+    cursor: pointer;
+  }
+
+  &__head-btn--create:hover {
+    background: var(--text-color-red);
+    color: white;
+    transition: background-color 2s ease-out;
+  }
+
+  &__body--title {
+    a {
+      color: var(--color-dark-blue);
+    }
+  }
+
+  &__body--date-posted {
+
+  }
+
+  &__body--author {
+
+  }
+
+  &__body-btn--edit {
+    background: var(--color-light-blue);
+    text-transform: uppercase;
+    border: 0;
+    text-align: center;
+    a {
+      color: white;
+    }
+    cursor: pointer;
+  }
+
+  &__body-btn--remove {
+    background: var(--color-pink-light);
+    text-transform: uppercase;
+    border: 0;
+    text-align: center;
+    a {
+      color: white;
+    }
+    cursor: pointer;
+  }
+
+}

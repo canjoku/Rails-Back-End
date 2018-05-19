@@ -4,7 +4,6 @@
 @import "layouts/l-posts-container";
 @import "layouts/l-paginate";
 @import "layouts/l-users-container";
-@import "layouts/l-user-form-container";
 
 @import "objects/o-button";
 
@@ -14,6 +13,8 @@
 @import "components/c-show-post";
 @import "components/c-user";
 @import "components/c-show-user";
-@import "components/c-user-form"
+@import "components/c-user-form";
+@import "components/c-post-form";
+@import "components/c-posts-table";
 
 

@@ -5,7 +5,7 @@
   margin: 8px;
 
   &__image {
-    height: 200px;
+    height: 12.5em;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -13,7 +13,7 @@
   }
 
   &__content {
-    padding: 10px;
+    padding: 0.625em;
   }
 
   &__title {
@@ -27,11 +27,11 @@
   &__date-published {
     color:var(--color-pink-light);
     text-align: left;
-    margin-top: 3.0px;
-    margin-bottom: 3.0px;;
+    margin-top: 0.1875em;
+    margin-bottom: 0.1875em;
   }
   &__description {
     text-align: justify;
-    margin: 7px;
+    margin: 0.4375em;
   }
 }

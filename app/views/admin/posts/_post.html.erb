@@ -1,8 +1,21 @@
-<tr class="admin-posts-table">
-  <td><%= link_to post.title, admin_post_path(post) %></td>
-  <td><%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-sm btn-warning' %></td>
-  <td>
+<tr>
+  <td class="c-posts-table__body--title">
+    <%= link_to(admin_post_path(post)) do %>
+      <%= post.title %>
+    <% end %>
+  </td>
+  <td class="c-posts-table__body--date-posted">
+    <%= time_ago_in_words(post.created_at) %>
+  </td>
+  <td class="c-posts-table__body--author">
+    <%= post.user.username %>
+  </td>
+  <td class="c-posts-table__body-btn--edit">
+    <%= link_to 'Edit', edit_admin_post_path(post) %>
+  </td>
+  <td class="c-posts-table__body-btn--remove">
     <%= link_to 'Remove', admin_post_path(post), method: :delete,
-    data: { confirm: 'Are you absolutely sure you want to delete?'}, class: 'btn btn-sm btn-danger' %>
+    data: { confirm: 'Are you absolutely sure you want to delete?'} %>
   </td>
 <tr>
+

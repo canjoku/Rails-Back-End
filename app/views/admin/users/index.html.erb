@@ -2,9 +2,7 @@
 
 <h1 class="heading">All Users</h1><hr>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
+<%= will_paginate @users %>
 
 <div class="row">
   <div>
@@ -18,6 +16,4 @@
   </table>
 </div>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
+<%= will_paginate @users %>

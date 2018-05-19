@@ -1,18 +1,34 @@
-<div class="l-user-form-container">
 
-  <%= form_for(user, html: {class: "c-user-form"}) do |f| %>
+<%= form_for(user, html: {class: "c-user-form"}) do |f| %>
 
-    <%= render 'shared/errors', object: user %>
-
+  <%= render 'shared/errors', object: user %>
+  <div>
     <%= f.label :username, class: "c-user-form__label--username" %>
-    <%= f.text_field :username, placeholder: "username", class: "c-user-form__field--username" %>
+  </div>
+  <div>
+    <%= f.text_field :username, class: "c-user-form__field--username" %>
+  </div>
+  <div>
     <%= f.label :email, class: "c-user-form__label--email" %>
-    <%= f.email_field :email, placeholder: "email", class: "c-user-form__field--email" %>
+  </div>
+  <div>
+    <%= f.email_field :email, class: "c-user-form__field--email" %>
+  </div>
+  <div>
     <%= f.label :password, class: "c-user-form__label--password" %>
-    <%= f.password_field :password, placeholder: "password", class: "c-user-form__field--password" %>
+  </div>
+  <div>
+    <%= f.password_field :password, class: "c-user-form__field--password" %>
+  </div>
+  <div>
     <%= f.label :password_confirmation, class: "c-user-form__label--pass-conf" %>
-    <%= f.password_field :password_confirmation, placeholder: "confirm password", class: "c-user-form__field--pass-conf" %>
-    <%= f.submit %>
-  <% end %>
-</div>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, class: "c-user-form__field--pass-conf" %>
+  </div>
+  <div>
+    <%= f.submit "Create Account", class: "c-user-form__btn--submit" %>
+  <div>
+
+<% end %>
 
