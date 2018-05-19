@@ -1,6 +1,6 @@
 <%= provide(:page_title, 'All Posts') %>
 
-<h1 class="heading">All Posts</h1>
+<h1>All Posts</h1>
 
 <%= will_paginate @posts %>
 
@@ -10,8 +10,8 @@
       <th class="c-posts-table__head--title">Title</th>
       <th class="c-posts-table__head--date-posted">Posted</th>
       <th class="c-posts-table__head--author">Author</th>
-      <th class="c-posts-table__head-btn--create">
-        <%= link_to "Create New post", new_admin_post_path %>
+      <th class="o-btn o-btn__btn--green ">
+        <%= link_to "Create", new_admin_post_path %>
       </th>
     </tr>
   </thead>

@@ -1,19 +1,18 @@
 <%= provide(:page_title, 'All Users') %>
 
-<h1 class="heading">All Users</h1><hr>
+<h1>All Users</h1><hr>
 
 <%= will_paginate @users %>
 
-<div class="row">
-  <div>
-    <%= link_to "New user", signup_path, class: 'btn btn-secondary btn-sm' %>
-  </div>
-  <table class="table">
-    <tr>
-      <th colspan="4">Title</th>
-    </tr>
-    <%= render @users %>
-  </table>
-</div>
+<table class="c-users-table">
+  <tr>
+    <th class="c-users-table__head--username">Users Name</th>
+    <th class="c-users-table__head--date-created">Account Created</th>
+    <th class="o-btn o-btn__btn--green">
+      <%= link_to "Create", signup_path %>
+    </th>
+  </tr>
+  <%= render @users %>
+</table>
 
 <%= will_paginate @users %>

@@ -31,7 +31,9 @@
 
 <div>
   <% if @post.persisted? %>
-    <%= link_to 'Show', @post %>
+    <button class="o-btn o-btn__btn--green">
+      <%= link_to 'Show', @post %>
+    </button>
   <% end %>
 </div>
 

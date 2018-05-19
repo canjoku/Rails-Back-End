@@ -1,6 +1,6 @@
 <tr>
   <td class="c-posts-table__body--title">
-    <%= link_to(admin_post_path(post)) do %>
+    <%= link_to(post) do %>
       <%= post.title %>
     <% end %>
   </td>
@@ -10,10 +10,10 @@
   <td class="c-posts-table__body--author">
     <%= post.user.username %>
   </td>
-  <td class="c-posts-table__body-btn--edit">
+  <td class="o-btn o-btn__btn--blue">
     <%= link_to 'Edit', edit_admin_post_path(post) %>
   </td>
-  <td class="c-posts-table__body-btn--remove">
+  <td class="o-btn o-btn__btn--pink">
     <%= link_to 'Remove', admin_post_path(post), method: :delete,
     data: { confirm: 'Are you absolutely sure you want to delete?'} %>
   </td>

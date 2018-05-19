@@ -19,7 +19,17 @@
     <h6 class="c-show-post__author-username"> <%= @post.user.username %> </h6>
     <h4 class="c-show-post__author-email"> <%= @post.user.email %> </h4>
     <section class="c-show-post__author-avatar"> <%= image_tag avatar_url(@post.user) %> </section>
+    <div>
+      <button class="o-btn o-btn__btn--blue">
+        <%= link_to 'Edit', edit_admin_post_path(@post)%>
+      </button>
+      <button class="o-btn o-btn__btn--pink">
+        <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
+        confirm: 'Are you absolutely sure you want to delete?'}, class: 'btn btn-sm btn-danger' %>
+      </button>
+    </div>
   </div>
+
 </div>
 
 

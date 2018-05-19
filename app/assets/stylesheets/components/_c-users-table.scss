@@ -1,4 +1,4 @@
-.c-posts-table {
+.c-users-table {
   border: 3px solid var(--color-dark-blue);
   max-width: 100%;
   padding: 0.825em;
@@ -6,18 +6,13 @@
   text-align: left;
   margin: auto;
 
-  &__head--title {
-    width: 30%;
+  &__head--username {
     font-size: 1.25rem;
-
-  }
-  &__head--date-posted {
-    width: 25%;
-    font-size: 1.25rem;
+    width: 40%;
   }
 
-  &__head--author {
-    width: 25%;
+  &__head--date-created {
     font-size: 1.25rem;
+    width: 40%;
   }
 }

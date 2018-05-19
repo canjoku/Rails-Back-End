@@ -6,6 +6,7 @@
   <% @users.each do |user| %>
 
     <div class="c-user">
+
       <div class="c-user__avatar">
         <%= link_to(user) do %>
           <%= image_tag avatar_url(user) %>
@@ -23,6 +24,7 @@
       </div>
 
     </div>
+
   <% end %>
 </div>
 
