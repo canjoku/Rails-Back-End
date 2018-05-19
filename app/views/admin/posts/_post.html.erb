@@ -5,7 +5,7 @@
     <% end %>
   </td>
   <td class="c-posts-table__body--date-posted">
-    <%= time_ago_in_words(post.created_at) %>
+    <%= post.created_at.to_date %>
   </td>
   <td class="c-posts-table__body--author">
     <%= post.user.username %>
