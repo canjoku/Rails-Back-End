@@ -1,31 +1,31 @@
-<%= form_for([:admin, post], html: {class: "c-post-form"}) do |f| %>
+<%= form_for([:admin, post], html: {class: "o-form c-post-form"}) do |f| %>
   <%= render 'shared/errors', object: post %>
   <div>
-    <%= f.label :title, class: "c-post-form__label--title" %>
+    <%= f.label :title %>
   </div>
   <div>
-    <%= f.text_field :title, class: "c-post-form__field--title" %>
+    <%= f.text_field :title, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.label :banner_image_url, class: "c-post-form__label--image" %>
+    <%= f.label :banner_image_url %>
   </div>
   <div>
-    <%= f.text_field :banner_image_url, class: "c-post-form__field--image" %>
+    <%= f.text_field :banner_image_url, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.label :description, class: "c-post-form__label--description" %>
+    <%= f.label :description %>
   </div>
   <div>
-    <%= f.text_area :description, rows: 5, class: "c-post-form__field--description" %>
+    <%= f.text_area :description, rows: 5, class: "o-form__field--text-area" %>
   </div>
   <div>
-    <%= f.label :body, class: "c-post-form__label--body" %>
+    <%= f.label :body %>
   </div>
   <div>
-    <%= f.text_area :body, rows: 12, class: "c-post-form__field--body" %>
+    <%= f.text_area :body, rows: 12, class: "o-form__field--text-area" %>
   </div>
   <div>
-    <%= f.submit "Create Post", class: "c-post-form__btn--submit" %>
+    <%= f.submit "Create Post", class: "o-form__btn--submit" %>
   <div>
 <% end %>
 

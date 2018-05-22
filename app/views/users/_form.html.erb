@@ -1,33 +1,33 @@
 
-<%= form_for(user, html: {class: "c-user-form"}) do |f| %>
+<%= form_for(user, html: {class: "c-user-form o-form"}) do |f| %>
 
   <%= render 'shared/errors', object: user %>
   <div>
-    <%= f.label :username, class: "c-user-form__label--username" %>
+    <%= f.label :username %>
   </div>
   <div>
-    <%= f.text_field :username, class: "c-user-form__field--username" %>
+    <%= f.text_field :username, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.label :email, class: "c-user-form__label--email" %>
+    <%= f.label :email %>
   </div>
   <div>
-    <%= f.email_field :email, class: "c-user-form__field--email" %>
+    <%= f.email_field :email, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.label :password, class: "c-user-form__label--password" %>
+    <%= f.label :password %>
   </div>
   <div>
-    <%= f.password_field :password, class: "c-user-form__field--password" %>
+    <%= f.password_field :password, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.label :password_confirmation, class: "c-user-form__label--pass-conf" %>
+    <%= f.label :password_confirmation %>
   </div>
   <div>
-    <%= f.password_field :password_confirmation, class: "c-user-form__field--pass-conf" %>
+    <%= f.password_field :password_confirmation, class: "o-form__field--text-field" %>
   </div>
   <div>
-    <%= f.submit "Create Account", class: "c-user-form__btn--submit" %>
+    <%= f.submit "Create Account", class: "o-form__btn--submit" %>
   <div>
 
 <% end %>

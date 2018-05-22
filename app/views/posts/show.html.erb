@@ -7,7 +7,7 @@
   <div class="c-show-post__date-published">
     <h5>Published <%= time_ago_in_words(@post.created_at) %> ago</h5><hr>
   </div>
-  <div class=c-show-post__description>
+  <div class="c-show-post__description">
     <h3>Description</h3>
     <p><%= @post.description.html_safe%></p>
   </div>
@@ -25,7 +25,7 @@
       </button>
       <button class="o-btn o-btn__btn--pink">
         <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
-        confirm: 'Are you absolutely sure you want to delete?'}, class: 'btn btn-sm btn-danger' %>
+        confirm: 'Are you absolutely sure you want to delete?'} %>
       </button>
     </div>
   </div>
