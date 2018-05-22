@@ -24,4 +24,4 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
-/public/pack
+/public/packs
