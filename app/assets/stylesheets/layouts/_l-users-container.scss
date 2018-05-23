@@ -1,0 +1,23 @@
+.l-users-container {
+  display: grid;
+  grid-gap: 0.0625em;
+  grid-auto-rows: 9.375em;
+}
+
+@media (max-width: 48em) {
+  .l-users-container {
+    grid-template-columns: repeat(1fr);
+  }
+}
+
+@media (min-width: 48em) {
+  .l-users-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 75em) {
+  .l-users-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

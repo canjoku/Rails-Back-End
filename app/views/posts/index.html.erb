@@ -1,13 +1,10 @@
 <% provide(:page_title, 'All Posts') %>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
+<%= will_paginate @posts %>
+
+<div class="l-posts-container">
+  <%= render partial: "shared/post", collection: @posts %>
 </div>
 
-<div class="row">
-  <%= render @posts %>
-</div>
+<%= will_paginate @posts %>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>

@@ -1,0 +1,17 @@
+<div class="c-post">
+  <div class="c-post__image" style='background-image: url(<%= post.banner_image_url %>);'></div>
+  <div class="c-post__content">
+    <h3 class="c-post__title">
+      <%= link_to(post) do %>
+        <%= post.title %>
+      <% end %>
+    </h3>
+    <h5 class="c-post__date-published">Published <%= time_ago_in_words(post.created_at)%> ago</h5>
+    <p class="c-post__description"><%= truncate(post.description, length: 140) %></p>
+
+    <button class="o-btn o-btn__btn--gray">
+      <%= link_to 'Read', post %>
+    </button>
+
+  </div>
+</div>

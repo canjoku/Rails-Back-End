@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
 
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
 # gem 'capistrano-rails', group: :development
 gem 'dotenv-rails'
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'posts#index'
 
   resources :posts, only: [:index, :show]
   resources :users, except: [:destroy, :new]

@@ -1,5 +1,22 @@
-@import "variables";
-@import "navbar";
-@import "home";
-@import "posts";
-@import "bootstrap";
+@import "base/variables";
+@import "base/reset";
+@import "base/framework";
+
+@import "layouts/l-posts-container";
+@import "layouts/l-users-container";
+
+@import "objects/o-button";
+@import "objects/o-form";
+
+@import "components/c-nav";
+@import "components/c-banner";
+@import "components/c-post";
+@import "components/c-show-post";
+@import "components/c-user";
+@import "components/c-show-user";
+@import "components/c-user-form";
+@import "components/c-post-form";
+@import "components/c-posts-table";
+@import "components/c-users-table";
+
+

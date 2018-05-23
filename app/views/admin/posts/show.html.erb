@@ -1,16 +1,7 @@
-<%= provide(:page_title, @post.title) %>
-
 <div>
-  <%= link_to 'Edit', edit_admin_post_path(@post), class: 'btn btn-sm btn-warning' %>
-  <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
-    confirm: 'Are you absolutely sure you want to delete?'}, class: 'btn btn-sm btn-danger' %>
-  <h1><%= @post.title %></h1><hr>
-</div>
-
-<div class="row">
-  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
-  <p> Published <%= time_ago_in_words(@post.created_at) %> ago </p>
-  <p><strong><%= @post.description %></strong></p>
-  <p><%= @post.body %></p>
-  </div>
+  <% if @post.persisted? %>
+    <button class="o-btn o-btn__btn--green">
+      <%= link_to 'Show', @post %>
+    </button>
+  <% end %>
 </div>

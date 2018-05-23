@@ -1,37 +1,20 @@
-<div class="blog-header">
-  <div class="container">
-    <div class="row">
-      <nav class="navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand text-primary" id="logo" href="/">Tony's Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= link_to 'Posts', posts_path, class: "nav-link text-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Bloggers', users_path, class: "nav-link text-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Contact', contact_path, class: "nav-link text-primary" %>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to 'All Posts', admin_posts_path, class: "nav-link text-primary" %>
-            </li>
-            <li>
-              <%= link_to 'All Users', admin_users_path, class: "nav-link text-primary" %>
-            </li>
-            <li>
-              <%= link_to 'Sign up', signup_path, class: "nav-link text-primary" %>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+<div class="c-nav c-nav__background" data-attribute="navHamburger-wrapper">
+  <a href="#" class="c-nav__toggle" data-attribute="navHamburger">
+    <i class="fas fa-bars"></i>
+  </a>
+  <%= link_to 'TBlog', posts_path, class: "c-nav__logo" %>
+
+  <div class="c-nav__left-menu">
+    <%= link_to 'Posts', posts_path, class: "c-nav__menu-item" %>
+    <%= link_to 'Bloggers', users_path, class: "c-nav__menu-item" %>
+    <%= link_to 'Contact', contact_path, class: "c-nav__menu-item" %>
+  </div>
+
+  <div class="c-nav__right-menu">
+    <%= link_to 'All Posts', admin_posts_path, class: "c-nav__menu-item" %>
+    <%= link_to 'All Users', admin_users_path, class: "c-nav__menu-item" %>
+    <%= link_to 'Sign up', signup_path, class: "c-nav__menu-item" %>
   </div>
 </div>
+
+<%= render "layouts/banner" %>

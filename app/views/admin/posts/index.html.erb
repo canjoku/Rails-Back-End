@@ -1,23 +1,23 @@
 <%= provide(:page_title, 'All Posts') %>
 
-<h1>All Posts</h1><hr>
+<h1>All Posts</h1>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
+<%= will_paginate @posts %>
 
-<div class="row">
-  <div>
-    <%= link_to "New post", new_admin_post_path, class: 'btn btn-secondary btn-sm' %>
-  </div>
-  <table class="table">
+<table class="c-posts-table">
+  <thead>
     <tr>
-      <th colspan="4">Title</th>
+      <th class="c-posts-table__head--title">Title</th>
+      <th class="c-posts-table__head--date-posted">Date Posted</th>
+      <th class="c-posts-table__head--author">Author</th>
+      <th class="o-btn o-btn__btn--green ">
+        <%= link_to "Create", new_admin_post_path %>
+      </th>
     </tr>
+  </thead>
+  <tbody>
     <%= render @posts %>
-  </table>
-</div>
+</table>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
+<%= will_paginate @posts %>
+

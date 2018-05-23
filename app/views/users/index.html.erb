@@ -1,30 +1,31 @@
 <%= provide(:page_title, 'All users') %>
-<h1>Showing all Bloggers</h1><hr>
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
 
-<div class="user-wrapper">
+<%= will_paginate @users %>
+
+<div class="l-users-container">
   <% @users.each do |user| %>
-    <ul class="listing">
-      <div class="row">
-        <div class="card col-md-4 offset-md-4">
-          <%= link_to(user) do %>
-            <%= image_tag avatar_url(user) %>
-          <% end %>
-          <li class="user-name text-primary">
-            <%= link_to(user) do %>
-              <%= user.username %>
-            <% end %>
-          </li>
-          <li><small><%= pluralize(user.posts.count, "post") if user.posts %></small></li>
-          <li></li>
-        </div>
+
+    <div class="c-user">
+
+      <div class="c-user__avatar">
+        <%= link_to(user) do %>
+          <%= image_tag avatar_url(user) %>
+        <% end %>
       </div>
-    </ul>
+
+      <div class="c-user__username">
+        <%= link_to(user) do %>
+          <%= user.username %>
+        <% end %>
+      </div>
+
+      <div class="c-user__posts">
+        <small><%= pluralize(user.posts.count, "post") if user.posts %></small>
+      </div>
+
+    </div>
+
   <% end %>
 </div>
 
-<div class="container pagination justify-content-center" >
-  <%= will_paginate @users, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
-</div>
+<%= will_paginate @users %>
