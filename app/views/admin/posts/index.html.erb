@@ -1,23 +1,40 @@
-<%= provide(:page_title, 'All Posts') %>
-
-<h1>All Posts</h1>
-
-<%= will_paginate @posts %>
-
-<table class="c-posts-table">
-  <thead>
-    <tr>
-      <th class="c-posts-table__head--title">Title</th>
-      <th class="c-posts-table__head--date-posted">Date Posted</th>
-      <th class="c-posts-table__head--author">Author</th>
-      <th class="o-btn o-btn__btn--green ">
-        <%= link_to "Create", new_admin_post_path %>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @posts %>
-</table>
-
-<%= will_paginate @posts %>
-
+<% if @posts.exists? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Post Status</th>
+        <th>Actions</th>
+        <th>Publish/Unpublish</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <%= link_to post.title, admin_post_path(post)  %>
+          </td>
+          <td>
+            <%= post.status %>
+          </td>
+          <td>
+            <%= link_to edit_admin_post_path(post), data: { behavior: 'edit'} do %>
+              <i class="fa fa-edit" style="color: #AA05A5"></i>
+            <% end %>
+            <%= link_to admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?', behavior: 'delete'} do %>
+              <i class="fa fa-trash" style="color: #032C61"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "Publish", publish_admin_post_path(post), method: :patch %>
+              <i class="fas fa-caret-square-up" style="color: "></i>
+            <%= link_to "Draft", unpublish_admin_post_path(post), method: :patch %>
+              <i class="fas fa-caret-square-down" style="color: "></i>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are currently no posts to display. Why not try <%= link_to 'adding', new_admin_post_path %> one?</p>
+<% end %>

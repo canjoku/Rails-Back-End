@@ -1,0 +1,9 @@
+<div>
+  <h1><%= @post.title %></h1>
+  <div>
+    Created <%= time_ago_in_words(@post.created_at) %>
+  </div>
+  </div>
+    <%= markdown(@post.body) %>
+  </div>
+</div>

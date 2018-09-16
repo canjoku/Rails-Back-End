@@ -1,0 +1,44 @@
+version: '2.1'
+
+services:
+  web:
+    build: .
+    image: app
+    command: bash -c "bundle install && bundle exec puma -p 3000 -C config/puma.rb"
+    volumes:
+      - .:/app
+      - gem_cache:/gems
+    ports:
+      - '3000:3000'
+    environment: &default_environment
+      DATABASE_URL: 'postgres://postgres:@postgres:5432'
+      REDIS_URL: 'redis://redis:6379'
+    depends_on:
+      - postgres
+      - redis
+
+  sidekiq:
+    image: app
+    command: bundle exec sidekiq -c 5 -q critical -q default
+    volumes:
+      - .:/app
+      - gem_cache:/gems
+    environment:
+      <<: *default_environment
+    depends_on:
+      - postgres
+      - redis
+      - web
+
+  postgres:
+    image: postgres:9.5
+    ports:
+      - '5432'
+
+  redis:
+    image: redis:3.2
+    ports:
+      - '6379'
+
+volumes:
+  gem_cache:

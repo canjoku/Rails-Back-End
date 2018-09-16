@@ -1,41 +1,19 @@
-<%= form_for([:admin, post], html: {class: "o-form c-post-form"}) do |f| %>
+<%= form_for [:admin, @post], html: {class: "o-form c-post-form"} do |f| %>
   <%= render 'shared/errors', object: post %>
   <div>
     <%= f.label :title %>
   </div>
   <div>
-    <%= f.text_field :title, class: "o-form__field--text-field" %>
-  </div>
-  <div>
-    <%= f.label :banner_image_url %>
-  </div>
-  <div>
-    <%= f.text_field :banner_image_url, class: "o-form__field--text-field" %>
-  </div>
-  <div>
-    <%= f.label :description %>
-  </div>
-  <div>
-    <%= f.text_area :description, rows: 5, class: "o-form__field--text-area" %>
+    <%= f.text_field :title, class: "o-form__field--text-field", data: { field: "title"}, id:"title" %>
   </div>
   <div>
     <%= f.label :body %>
   </div>
   <div>
-    <%= f.text_area :body, rows: 12, class: "o-form__field--text-area" %>
+    <%= f.text_area :body, rows: 12, class: "o-form__field--text-area", data: { field: "body"}, id: "body" %>
   </div>
   <div>
-    <%= f.submit "Create Post", class: "o-form__btn--submit" %>
+    <%= f.submit "Create Post", class: "o-form__btn--submit", data: { field: "create-post"} %>
   <div>
 <% end %>
-
-<div>
-  <% if @post.persisted? %>
-    <button class="o-btn o-btn__btn--green">
-      <%= link_to 'Show', @post %>
-    </button>
-  <% end %>
-</div>
-
-
 

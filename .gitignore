@@ -22,6 +22,7 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
-
+/dump.rdb
 .env
 /public/packs
+/db/seeds.rb

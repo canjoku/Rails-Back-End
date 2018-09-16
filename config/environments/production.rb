@@ -1,6 +1,9 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+# config.webpacker.check_yarn_integrity = false
+
     # Verifies that versions and hashed value of the package contents in the project's package.json
-  config.webpacker.check_yarn_integrity = false
+  # config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -24,14 +27,15 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -91,4 +95,25 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  OmniAuth.config.on_failure = Proc.new { |env|
+    message_key = env['omniauth.error.type']
+    error_description = Rack::Utils.escape(env['omniauth.error'].error_reason)
+    new_path = "#{env['SCRIPT_NAME']}#{OmniAuth.config.path_prefix}/failure?message=#{message_key}&error_description=#{error_description}"
+    Rack::Response.new(['302 Moved'], 302, 'Location' => new_path).finish
+  }
+
+  OmniAuth.config.full_host = "https://tn-blog-app.herokuapp.com/"
+
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch("MANDRILL_SMTP_SERVER"),
+    authentication: :plain
+    domain: ENV.fetch("MANDRILL_SMTP_DOMAIN"),
+    enable_starttls_auto: true,
+    password: ENV.fetch("MANDRILL_SMTP_PASSWORD"),
+    port: "587",
+    user_name: ENV.fetch("MANDRILL_SMTP_LOGIN")
+  }
+  config.action_mailer.default_url_options = { host: ENV["SMTP_DOMAIN"] }
+
 end

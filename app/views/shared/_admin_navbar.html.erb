@@ -1,0 +1,8 @@
+<div class="c-nav c-nav__background">
+  <%= link_to 'TBlog', posts_path, class: "c-nav__logo" %>
+  <div class="c-nav__right-menu">
+    <%= link_to 'Create Post', new_admin_post_path, class: "c-nav__menu-item", data: { menu: "new-post" } %>
+    <%= link_to 'Manage Posts', admin_posts_path, class: "c-nav__menu-item", data: { menu: "manage-posts" } %>
+    <%= link_to 'Subscribers List', admin_subscribers_path, class: "c-nav__menu-item", data: { menu: "subscribers" } %>
+  </div>
+</div>

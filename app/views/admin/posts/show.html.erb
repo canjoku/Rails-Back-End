@@ -1,7 +1,1 @@
-<div>
-  <% if @post.persisted? %>
-    <button class="o-btn o-btn__btn--green">
-      <%= link_to 'Show', @post %>
-    </button>
-  <% end %>
-</div>
+<%= render 'shared/post_show_page' %>

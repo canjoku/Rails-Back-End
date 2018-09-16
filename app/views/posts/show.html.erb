@@ -1,37 +1,7 @@
-<%= provide(:page_title, @post.title) %>
-
-<div class="c-show-post">
-  <div class=c-show-post__title>
-    <h1><%= @post.title %></h1>
-  </div>
-  <div class="c-show-post__date-published">
-    <h5>Published <%= time_ago_in_words(@post.created_at) %> ago</h5><hr>
-  </div>
-  <div class="c-show-post__description">
-    <h3>Description</h3>
-    <p><%= @post.description.html_safe%></p>
-  </div>
-  <div class="c-show-post__body">
-    <h3>Main content</h3>
-    <p><%= @post.body.html_safe %></p>
-  </div>
-  <div class="c-show-post__author">
-    <h6 class="c-show-post__author-username"> <%= @post.user.username %> </h6>
-    <h4 class="c-show-post__author-email"> <%= @post.user.email %> </h4>
-    <section class="c-show-post__author-avatar"> <%= image_tag avatar_url(@post.user) %> </section>
-    <div>
-      <button class="o-btn o-btn__btn--blue">
-        <%= link_to 'Edit', edit_admin_post_path(@post)%>
-      </button>
-      <button class="o-btn o-btn__btn--pink">
-        <%= link_to 'Remove', admin_post_path(@post), method: :delete, data: {
-        confirm: 'Are you absolutely sure you want to delete?'} %>
-      </button>
-    </div>
-  </div>
-
-</div>
-
-
-
-
+<%= render 'shared/post_show_page' %>
+<% if logged_in %>
+  <%= render 'comments/form' %>
+  <%= render 'comments/comment' %>
+<% else %>
+  <div> You will need to be logged on in order to leave comments </div>
+<% end %>

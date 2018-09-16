@@ -1,0 +1,11 @@
+<h1>A comment has been left on article title: <%= @comment.post.title %> </h1>
+<p>See link below</p>
+
+<% link_to @comment.post.title, post_url(@comment.post.id) %>
+
+<p>
+  <%= @comment.body %>
+</p>
+
+
+

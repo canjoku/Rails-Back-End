@@ -1,0 +1,20 @@
+<% if @subscribers.exists? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Emails</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subscribers.each do |subscriber| %>
+        <tr>
+          <td>
+            <%= subscriber.email %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are currently no registered subscribers</p>
+<% end %>

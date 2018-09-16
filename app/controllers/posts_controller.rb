@@ -1,15 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 6).most_recent
+    @posts = Post.published.most_recent.paginate(page: params[:page], per_page: 8)
   end
 
   def show
+    @post = Post.includes(:comments).friendly.find(params[:id])
+    @comments = @post.comments.order(created_at: :DESC)
   end
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
-
 end

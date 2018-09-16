@@ -1,0 +1,13 @@
+<%= form_for([@post, @post.comments.build], html: {class: "o-form c-comment-form"}) do |f| %>
+  <%= render 'shared/errors', object: @post.comments.build %>
+  <div>
+    <%= f.label :body %>
+  </div>
+  <div>
+    <%= f.text_area :body, rows: 5, class: "o-form__field--text-area", placeholder: "Your Comment", id: "comment-body" %>
+  </div>
+  <div>
+    <%= f.submit "Add Comment", class: "o-form__btn--submit", data: { field: "create-comment"} %>
+  <div>
+<% end %>
+

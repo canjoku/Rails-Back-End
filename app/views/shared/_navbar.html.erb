@@ -1,0 +1,13 @@
+<div class="c-nav c-nav__background">
+  <%= link_to 'TBlog', root_path, class: "c-nav__logo", data: { menu: "logo" } %>
+  <div class="c-nav__right-menu">
+    <% if logged_in %>
+      <%= link_to 'Email Notifications', subscribers_path, class: "c-nav__menu-item", data: { menu: "subscribe" } %>
+      <%= link_to 'Logout', logout_path, class: "c-nav__menu-item", data: { menu: "logout" } %>
+    <% else %>
+      <%= link_to 'Login', login_path, class: "c-nav__menu-item", data: { menu: "login" } %>
+    <% end %>
+  </div>
+</div>
+
+

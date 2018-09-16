@@ -1,54 +1,61 @@
-class Admin::PostsController < AdminController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+class Admin::PostsController < Admin::ApplicationController
+  before_action :set_post, only: [:edit, :show, :update, :destroy, :publish, :unpublish]
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 8).most_recent
   end
 
-  def show
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to @post, notice: "Post #{@post.title} was succesfully created!"
+    else
+      render :new
+    end
   end
 
   def new
     @post = Post.new
   end
 
-  def create
-    @post = Post.new(post_params)
-    @post.user = User.second
-    if @post.save
-      flash[:success] = "Post was succesfully created!"
-      redirect_to admin_post_path(@post)
-    else
-      render :new
-    end
+  def edit
   end
 
-  def edit
+
+  def show
+    @comments = @post.comments.order(created_at: :DESC)
   end
 
   def destroy
     @post.destroy
-    flash[:success] = "Post was succesfully deleted!"
-    redirect_to admin_posts_url
+    redirect_to admin_posts_path,  notice: "Post was succesfully destroyed!"
   end
 
   def update
     if @post.update(post_params)
-      flash[:success] = "Post was succesfully updated!"
-      redirect_to admin_post_path(@post)
+      redirect_to admin_posts_path, notice: "Post was succesfully updated!"
     else
       render :edit
     end
   end
 
+  def publish
+    @post.update_column(:status, "published")
+    redirect_to admin_posts_path, notice: "Published #{@post.title}"
+  end
+
+  def unpublish
+    @post.update_column(:status, "draft")
+    redirect_to admin_posts_path, notice: "Unpublished #{@post.title}"
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :description, :banner_image_url)
+    params.require(:post).permit(:title, :body)
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).friendly.find(params[:id])
   end
-
 end
