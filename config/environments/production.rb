@@ -106,13 +106,13 @@ Rails.application.configure do
   OmniAuth.config.full_host = "https://tn-blog-app.herokuapp.com/"
 
   config.action_mailer.smtp_settings = {
-    address: ENV.fetch("MANDRILL_SMTP_SERVER"),
+    address: ENV.fetch('MANDRILL_SMTP_SERVER'),
     authentication: :plain
-    domain: ENV.fetch("MANDRILL_SMTP_DOMAIN"),
+    domain: ENV.fetch('MANDRILL_SMTP_DOMAIN'),
     enable_starttls_auto: true,
-    password: ENV.fetch("MANDRILL_SMTP_PASSWORD"),
+    password: ENV.fetch('MANDRILL_SMTP_PASSWORD'),
     port: "587",
-    user_name: ENV.fetch("MANDRILL_SMTP_LOGIN")
+    user_name: ENV.fetch('MANDRILL_SMTP_LOGIN')
   }
   config.action_mailer.default_url_options = { host: ENV["SMTP_DOMAIN"] }
 
