@@ -110,7 +110,7 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true,
     password: ENV.fetch('MANDRILL_SMTP_PASSWORD'),
-    port: "587",
+    port: ENV.fetch('MANDRILL_SMTP_PORT'),
     user_name: ENV.fetch('MANDRILL_SMTP_LOGIN')
   }
   config.action_mailer.default_url_options = { host: ENV["SMTP_DOMAIN"] }

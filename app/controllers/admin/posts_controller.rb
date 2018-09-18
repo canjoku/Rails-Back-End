@@ -8,7 +8,7 @@ class Admin::PostsController < Admin::ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, notice: "Post #{@post.title} was succesfully created!"
+      redirect_to admin_posts_path, notice: "Post #{@post.title} was succesfully created!"
     else
       render :new
     end

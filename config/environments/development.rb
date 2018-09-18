@@ -36,6 +36,17 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch('MANDRILL_SMTP_SERVER'),
+    authentication: :plain,
+    enable_starttls_auto: true,
+    password: ENV.fetch('MANDRILL_SMTP_PASSWORD'),
+    port: ENV.fetch('MANDRILL_SMTP_PORT'),
+    user_name: ENV.fetch('MANDRILL_SMTP_LOGIN')
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

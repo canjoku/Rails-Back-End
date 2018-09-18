@@ -65,6 +65,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring', '~> 2.0.2'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'foreman', '~> 0.85.0'
 end
 
 gem 'tzinfo-data', '~> 1.2018', '>= 1.2018.4', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
