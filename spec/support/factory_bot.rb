@@ -8,11 +8,11 @@ FactoryBot.define do
     body { Faker::Lorem.paragraph }
 
     trait :published do
-      status "published"
+      status { "published" }
     end
 
     trait :draft do
-      status "draft"
+      status { "draft" }
     end
 
     factory :post_with_comments do
@@ -32,5 +32,4 @@ FactoryBot.define do
       email { Faker::Internet.email }
     end
   end
-  
 end
