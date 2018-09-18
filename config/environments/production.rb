@@ -105,7 +105,7 @@ Rails.application.configure do
     Rack::Response.new(['302 Moved'], 302, 'Location' => new_path).finish
   }
 
-  OmniAuth.config.full_host = "https://tn-blog-app.herokuapp.com/"
+  OmniAuth.config.full_host = "https://tn-blog.herokuapp.com/"
 
   config.action_mailer.smtp_settings = {
     address: ENV.fetch('MANDRILL_SMTP_SERVER'),
