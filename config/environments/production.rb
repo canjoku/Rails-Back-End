@@ -63,7 +63,7 @@ Rails.application.configure do
 
   # Use a different cache store in production.
   config.cache_store = :dalli_store
-  config.session_store :dalli_store
+  # config.session_store :dalli_store
 
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
@@ -97,15 +97,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  OmniAuth.config.on_failure = Proc.new { |env|
-    message_key = env['omniauth.error.type']
-    error_description = Rack::Utils.escape(env['omniauth.error'].error_reason)
-    new_path = "#{env['SCRIPT_NAME']}#{OmniAuth.config.path_prefix}/failure?message=#{message_key}&error_description=#{error_description}"
-    Rack::Response.new(['302 Moved'], 302, 'Location' => new_path).finish
-  }
-
-  OmniAuth.config.full_host = "https://tn-blog.herokuapp.com/"
 
   config.action_mailer.smtp_settings = {
     address: ENV.fetch('MANDRILL_SMTP_SERVER'),
