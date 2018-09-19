@@ -3,8 +3,7 @@ class Post < ApplicationRecord
   scope :published, -> { where(status: "published") }
   scope :draft, -> { where(status: "draft") }
 
-  after_update :publish_creation
-
+  after_save :publish_creation if :published?
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -16,9 +15,16 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+
   private
+
   def publish_creation
-    broadcast(:send_new_post_mail, self.id) if self.status == "publish"
+    broadcast(:send_new_post_mail, self.id)
   end
+
+  def published?
+    self.status == "published"
+  end
+
 
 end
