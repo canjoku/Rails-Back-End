@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('josefin sans Regular'), local('JosefinSans-Regular'),
+       font-url('josefin-sans-v12-latin-regular.woff') format('woff'),
+       font-url('josefin-sans-v12-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayFairDisplay-Regular'),
+       font-url('playfair-display-v13-latin-regular.woff') format('woff'),
+       font-url('playfair-display-v13-latin-regular.woff2') format('woff2');
+}

@@ -1,6 +1,22 @@
 @import "base/variables";
 @import "base/reset";
-@import "components/c-nav";
+@import "base/base";
+
+@import "layouts/l-wrapper";
+@import "layouts/l-posts";
+
+
+@import "components/c-header";
+@import "components/c-links";
 @import "components/c-footer";
+@import "components/c-post";
+@import "components/c-show-post";
+@import "components/c-comments-form";
+@import "components/c-comment";
+@import "components/c-subscriber";
+
+@import "notices/n-message";
+
+@import "fonts/fonts";
 
 

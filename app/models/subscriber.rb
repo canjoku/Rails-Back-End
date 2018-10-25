@@ -5,6 +5,7 @@ class Subscriber < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   scope :most_recent, -> { order(created_at: :desc) }
+  scope :alphabetical_order, -> { order(email: :asc) }
 
   private
   def publish_creation

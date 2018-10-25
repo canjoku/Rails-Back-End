@@ -1,8 +1,21 @@
-<div class="c-nav c-nav__background">
-  <%= link_to 'TBlog', posts_path, class: "c-nav__logo" %>
-  <div class="c-nav__right-menu">
-    <%= link_to 'Create Post', new_admin_post_path, class: "c-nav__menu-item", data: { menu: "new-post" } %>
-    <%= link_to 'Manage Posts', admin_posts_path, class: "c-nav__menu-item", data: { menu: "manage-posts" } %>
-    <%= link_to 'Subscribers List', admin_subscribers_path, class: "c-nav__menu-item", data: { menu: "subscribers" } %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to 'TBlog', posts_path, class: "navbar-brand", data: { menu: "logo" } %>
+    <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Manage Posts', admin_posts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Create Post', new_admin_post_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Subscribers List', admin_subscribers_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

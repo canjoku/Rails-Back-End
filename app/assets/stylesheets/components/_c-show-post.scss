@@ -1,0 +1,65 @@
+.c-show-post {
+  margin: 0.8rem;
+  text-align: justify;
+  h1::first-letter {
+    text-transform: uppercase;
+  }
+
+
+  &__title {
+    color: var(--link-colour);
+    padding: 1rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: -0.125rem;
+    font-weight: bold;
+  }
+
+  &__created-at, &__comments-notifier {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    font-weight: bold;
+    padding:1rem;
+
+  }
+
+  &__body {
+    font-size: 0.8rem;
+    font-weight:normal;
+    line-height:1.7rem;
+    padding:1rem;
+
+    p::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 720px) {
+  .c-show-post {
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__body {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  .c-show-post {
+    &__title {
+      font-size: 2.0rem;
+    }
+
+    &__body {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
+  }
+}

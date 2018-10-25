@@ -1,19 +1,19 @@
-<%= form_for [:admin, @post], html: {class: "o-form c-post-form"} do |f| %>
-  <%= render 'shared/errors', object: post %>
-  <div>
-    <%= f.label :title %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1>New Post</h1>
+      <%= form_for [:admin, @post] do |f| %>
+        <div class="container"><%= render 'shared/errors', object: post %></div>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :body %>
+          <%= f.text_area :body, rows: 12, class: "form-control" %>
+        </div>
+        <%= f.submit "Create Post", class: "btn btn-secondary" %>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.text_field :title, class: "o-form__field--text-field", data: { field: "title"}, id:"title" %>
-  </div>
-  <div>
-    <%= f.label :body %>
-  </div>
-  <div>
-    <%= f.text_area :body, rows: 12, class: "o-form__field--text-area", data: { field: "body"}, id: "body" %>
-  </div>
-  <div>
-    <%= f.submit "Create Post", class: "o-form__btn--submit", data: { field: "create-post"} %>
-  <div>
-<% end %>
-
+</div>

@@ -1,0 +1,12 @@
+.c-comment {
+  padding: 1rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+@media only screen and (min-width: 720px) {
+  .c-comment {
+    font-size: 0.9rem;
+    width: 50%
+  }
+}

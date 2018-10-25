@@ -1,9 +1,17 @@
-<div>
-  <h1><%= @post.title %></h1>
-  <div>
-    Created <%= time_ago_in_words(@post.created_at) %>
+<div class=c-show-post>
+  <h1 class="c-show-post__title">
+    <%= @post.title %>
+  </h1>
+  <div class="c-show-post__created-at">
+    Created <%= time_ago_in_words(@post.created_at) %> ago
   </div>
+  <div class="c-show-post__body">
+    <p><%= markdown(@post.body) %></p>
   </div>
-    <%= markdown(@post.body) %>
-  </div>
+  <% if logged_in %>
+    <%= render 'comments/form' %>
+    <%= render 'comments/comment' %>
+  <% else %>
+    <div class="c-show-post__comments-notifier"> You will need to be logged on in order to leave comments </div>
+  <% end %>
 </div>

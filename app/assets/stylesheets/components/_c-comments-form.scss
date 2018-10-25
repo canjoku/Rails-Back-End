@@ -1,0 +1,35 @@
+.c-comments-form {
+  margin: 0.8rem;
+
+  &__text-area {
+    width: 100%;
+    height: 10rem;
+  }
+
+  &__submit-btn {
+    background-color: var(--black-colour);
+    display: inline-block;
+    padding: 0.35rem 1.2rem;
+    border: 0.1rem solid #FFFFFF;
+    margin: 0 0.3rem 0.3rem 0;
+    border-radius: 0.12rem;
+    font-weight: 300;
+    color: var(--text-colour);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  &__submit-btn:hover {
+    color: var(--black-colour);
+    background-color: var(--background-colour);
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .c-comments-form {
+    &__text-area {
+      width: 50%;
+      height: 10rem;
+    }
+  }
+}

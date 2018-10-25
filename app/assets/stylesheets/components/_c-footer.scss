@@ -1,13 +1,10 @@
 .c-footer {
-  background-color: var(--color-dark-blue);
-  position: relative;
-  height: 8.25em;
-  margin-top: -4.25em;
-  clear: both;
-
-  &__text {
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
-  }
+  background-color: var(--footer-background);
+  padding: 2.5rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  text-align: center;
+  color: var(--text-colour);
 }

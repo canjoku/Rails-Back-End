@@ -9,11 +9,11 @@ RSpec.feature "Posts", type: :feature do
       admin_login
       visit admin_root_path
 
-      find("a[data-menu='new-post']").click
+      click_link('Create Post')
       title = Faker::Lorem.word
-      fill_in "title", with: title
-      fill_in "body", with: Faker::Lorem.paragraph
-      find("input[data-field='create-post']").click
+      fill_in("post[title]", with: title)
+      fill_in("post[body]", with: Faker::Lorem.paragraph)
+      click_button('Create Post')
 
       expect(page).to have_content("Post #{title} was succesfully created!")
     end
@@ -22,8 +22,8 @@ RSpec.feature "Posts", type: :feature do
       admin_login
       visit admin_root_path
 
-      find("a[data-menu='new-post']").click
-      find("input[data-field='create-post']").click
+      click_link('Create Post')
+      click_button('Create Post')
 
       expect(page).to have_content("Title can't be blank")
       expect(page).to have_content("Body can't be blank")

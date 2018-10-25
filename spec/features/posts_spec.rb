@@ -9,7 +9,8 @@ RSpec.feature "Posts", type: :feature do
     scenario "site users should succesfully list published posts" do
 
       visit root_path
-      find("a[data-menu='logo']").click
+      click_link('Home')
+
       expect(page).to have_content(post1.title)
       expect(page).to have_content(post2.title)
     end
@@ -22,10 +23,10 @@ RSpec.feature "Posts", type: :feature do
     scenario "site users should fail to list unpublished posts" do
 
       visit root_path
-      find("a[data-menu='logo']").click
+      click_link('Home')
 
-      expect(page).not_to have_content(post1.title)
-      expect(page).not_to have_content(post2.title)
+      expect(page).not_to have_content(post1.body)
+      expect(page).not_to have_content(post2.body)
 
     end
   end
@@ -35,7 +36,7 @@ RSpec.feature "Posts", type: :feature do
 
     scenario "site users should be able to view published posts" do
       visit root_path
-      find("a[data-post='title']").click
+      click_link(post.title)
 
       expect(page.current_path).to eq(post_path(post))
       expect(page).to have_content(post.title)

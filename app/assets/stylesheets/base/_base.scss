@@ -1,0 +1,34 @@
+* {
+  margin : 0;
+  padding : 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--background-colour);
+  color: var(--text-colour);
+  font-size: 1em;
+  font-weight: 400;
+}
+
+
+html {
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-colour);
+  text-decoration: none;
+
+  &:hover, &:focus {
+    outline: none;
+    color: var(--text-color);
+  }
+}

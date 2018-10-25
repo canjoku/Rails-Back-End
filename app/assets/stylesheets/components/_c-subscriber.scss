@@ -1,0 +1,40 @@
+.c-subscriber-form {
+  display: flex;
+  margin: 0 1rem 0 0;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+  letter-spacing: 0.125rem;
+
+  &__email {
+    input[type=text] {
+      width: 100%;
+      border: none;
+      margin: 1rem 1rem 0 0;
+      padding: 0.15rem 1.25rem;
+    }
+  }
+
+  &__btn {
+    background-color: var(--black-colour);
+    border: none;
+    color: var(--link-colour);
+    text-decoration: none;
+    cursor: pointer;
+    display: inline;
+    margin: 1rem 1rem 1rem 1rem;
+  }
+}
+
+
+@media only screen and (min-width: 720px) {
+  .c-subscriber {
+    
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  .c-subscriber {
+    
+  }
+}

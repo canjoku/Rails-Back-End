@@ -1,0 +1,27 @@
+.c-post {
+  margin: 30px;
+  h1::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .c-post {
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  .c-post {
+    &__title {
+      font-size: 1.7rem;
+    }
+  }
+}

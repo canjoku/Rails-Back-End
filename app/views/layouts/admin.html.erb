@@ -6,24 +6,21 @@
     <%= yield(:page_title) %> | Tony's Blog
   </title>
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'myicon.ico' %>
-  <%= stylesheet_link_tag 'admin/application',
-    "https://fonts.googleapis.com/css?family=Montserrat",
-    media: 'all', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'myicon.png' %>
+  <%= stylesheet_link_tag 'admin/application', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= stylesheet_link_tag "https://use.fontawesome.com/releases/v5.0.13/css/all.css",
     media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'admin/application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 <body>
-<div class="container">
-  <div class="main">
-    <%= render "shared/admin_navbar" %>
+  <%= render "shared/admin_navbar" %>
+  <div class="container">
     <%= render "shared/notice_messages" %>
-    <%= yield %>
   </div>
-</div>
+  <%= yield %>
 </body>
 
 </html>

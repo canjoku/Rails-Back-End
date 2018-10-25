@@ -1,7 +1,14 @@
 <% provide(:page_title, 'All Posts') %>
 
-<% @posts.each do |post| %>
-  <div><%= post.created_at.strftime("%b %d, %Y") %></div>
-  <div>Title: <%= link_to post.title, post_path(post), data: { post: "title" } %></div>
-  <div><%= post.body %></div>
-<% end %>
+<div class="l-posts">
+  <% @posts.each do |post| %>
+    <div class="c-post">
+      <h1 class="c-post__title">
+        <%= link_to post.title, post_path(post) %>
+      </h1>
+      <div class="c-post__body">
+        <%= markdown(post.body).truncate(150) %>
+      </div>
+    </div>
+  <% end %>
+</div>

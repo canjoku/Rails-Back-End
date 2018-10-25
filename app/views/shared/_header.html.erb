@@ -1,0 +1,24 @@
+<header class="c-header">
+  <div class="c-header__content" data-header="content">
+    <h1 class="c-header__title">TBlog Stories</h1>
+    <div class="c-header_subtitle">
+      <div class="c-header__description">
+        A place to read about web development code stories. Courtesy of <a href="#">Tony Njoku.</a>
+        <div class="c-links">
+          <%= link_to 'Home', root_path, class: "c-links__item c-links__item--current" %>
+          <% if logged_in %>
+            <%= link_to 'Logout', logout_path, class: "c-links__item" %>
+          <% else %>
+            <%= link_to 'Login', login_path, class: "c-links__item" %>
+          <% end %>
+          <%= link_to 'About', about_path, class: "c-links__item" %>
+          <%= link_to 'Projects', projects_path, class: "c-links__item" %>
+          <%= render 'subscribers/form' %>
+        </div> <!-- /header__links -->
+      </div>
+      <%= render "shared/notice_messages" %>
+    </div> <!-- /header__subtitle -->
+  </div> <!-- /header__content -->
+</header>
+
+

@@ -15,13 +15,14 @@ module AdminSpecHelper
   end
 
   def edit_post
-    find("[data-behavior='edit']").click
+    click_link('Edit')
     test_title = Faker::Lorem.word
-    fill_in "title", with: test_title
-    find("input[data-field='create-post']").click
+    fill_in("post[title]", with: test_title)
+    click_button('Create Post')
 
     expect(page).to have_content("Post was succesfully updated!")
     expect(page).to have_content(test_title)
     expect(page).to have_content(post.status)
   end
 end
+

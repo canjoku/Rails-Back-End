@@ -1,40 +1,55 @@
-<% if @posts.exists? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Post Status</th>
-        <th>Actions</th>
-        <th>Publish/Unpublish</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr>
-          <td>
-            <%= link_to post.title, admin_post_path(post)  %>
-          </td>
-          <td>
-            <%= post.status %>
-          </td>
-          <td>
-            <%= link_to edit_admin_post_path(post), data: { behavior: 'edit'} do %>
-              <i class="fa fa-edit" style="color: #AA05A5"></i>
-            <% end %>
-            <%= link_to admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?', behavior: 'delete'} do %>
-              <i class="fa fa-trash" style="color: #032C61"></i>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to "Publish", publish_admin_post_path(post), method: :patch %>
-              <i class="fas fa-caret-square-up" style="color: "></i>
-            <%= link_to "Draft", unpublish_admin_post_path(post), method: :patch %>
-              <i class="fas fa-caret-square-down" style="color: "></i>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>There are currently no posts to display. Why not try <%= link_to 'adding', new_admin_post_path %> one?</p>
-<% end %>
+<div class="container">
+  <% if @posts.exists? %>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr class="table-success">
+            <th scope="col">No.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Post Status</th>
+            <th scope="col">Actions</th>
+            <th scope="col">Publish/Unpublish</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each.with_index do |post, index| %>
+            <tr>
+              <td>
+                <%= index+1 %>
+              </td>
+              <td>
+                <%= link_to post.title, post_path(post) %>
+              </td>
+              <td>
+                <%= post.status %>
+              </td>
+              <td>
+                <div>
+                  <%= link_to edit_admin_post_path(post) do %>
+                    <i class="fas fa-edit fa-fw" style="color: #008ae6">Edit</i>
+                  <% end %>
+                </div>
+                <div>
+                  <%= link_to admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?', behavior: 'delete'} do %>
+                    <i class="fas fa-trash-alt fa-fw" style="color: #cc2900">Delete</i>
+                  <% end %>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <%= link_to "Publish", publish_admin_post_path(post), role: "button", class: "btn btn-success btn-sm", method: :patch %>
+                </div> <br >
+                <div>
+                  <%= link_to "Draft", unpublish_admin_post_path(post), role: "button", class: "btn btn-info btn-sm", method: :patch %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <div>
+  <% else %>
+    <p>There are currently no posts to display. Why not try <%= link_to 'adding', new_admin_post_path %> one?</p>
+  <% end %>
+  </div>
+</div>

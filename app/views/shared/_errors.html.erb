@@ -1,6 +1,7 @@
-<% if object.errors.any? %>
+<div>
+  <% if object.errors.any? %>
     <div>
-      <h2><%= pluralize(object.errors.count, "error") %>Errors:</h2>
+      <h2><%= pluralize(object.errors.count, "Errors") %></h2>
       <ul>
         <% object.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -8,3 +9,4 @@
       </ul>
     </div>
   <% end %>
+</div>

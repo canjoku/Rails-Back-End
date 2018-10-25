@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get 'logout', to: 'auth0#logout'
   get 'login', to: 'auth0#login'
 
-  resources :subscribers, only: [:create, :index, :destroy]
+  get 'about', to: 'pages#about'
+  get 'projects', to: 'pages#projects'
+
+  resources :subscribers, only: [:create]
 
 
   resources :posts, only: [:show, :index] do
