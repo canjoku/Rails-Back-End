@@ -6,9 +6,6 @@
       <h1 class="c-post__title">
         <%= link_to post.title, post_path(post) %>
       </h1>
-      <div class="c-post__body">
-        <%= markdown(post.body).truncate(150) %>
-      </div>
     </div>
   <% end %>
 </div>
