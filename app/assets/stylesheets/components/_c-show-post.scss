@@ -20,14 +20,14 @@
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     font-weight: bold;
-    padding:1rem;
+    padding: 1rem;
 
   }
 
   &__body {
-    font-size: 0.8rem;
-    font-weight:normal;
-    line-height:1.7rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 2.5rem;
     padding:1rem;
 
     p::first-letter {
@@ -51,8 +51,6 @@
     }
 
     &__body {
-      font-size: 0.9rem;
-      line-height: 1.8rem;
       padding-left: 6rem;
       padding-right: 6rem;
     }
@@ -74,8 +72,6 @@
     }
 
     &__body {
-      font-size: 1.0rem;
-      line-height: 2.1rem;
       padding-left: 8rem;
       padding-right: 8rem;
     }
