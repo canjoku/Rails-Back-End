@@ -39,6 +39,7 @@ gem 'sinatra', github: 'sinatra/sinatra'
 
 gem 'wisper', '~> 1.6', '>= 1.6.1'
 gem 'redcarpet', '~> 3.4'
+gem 'rouge', '~> 3.3'
 
 gem 'dalli', '~> 2.7', '>= 2.7.8'
 gem 'graphql', '~> 1.8', '>= 1.8.6'

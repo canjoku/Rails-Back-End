@@ -10,7 +10,7 @@
     color: var(--link-colour);
     padding: 1rem;
     font-size: 1.4rem;
-    line-height: 1.2rem;
+    line-height: 1.8rem;
     letter-spacing: -0.125rem;
     font-weight: bold;
   }
@@ -27,7 +27,7 @@
   &__body {
     font-size: 1.0rem;
     font-weight: normal;
-    line-height: 2.5rem;
+    line-height: 1.7rem;
     padding:1rem;
 
     p::first-letter {
@@ -53,6 +53,7 @@
     &__body {
       padding-left: 6rem;
       padding-right: 6rem;
+      line-height: 2.4rem;
     }
   }
 }
@@ -74,6 +75,7 @@
     &__body {
       padding-left: 8rem;
       padding-right: 8rem;
+      line-height: 2.4rem;
     }
   }
 }
