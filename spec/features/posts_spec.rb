@@ -9,7 +9,7 @@ RSpec.feature "Posts", type: :feature do
     scenario "site users should succesfully list published posts" do
 
       visit root_path
-      click_link('Home')
+      click_link('Blog')
 
       expect(page).to have_content(post1.title)
       expect(page).to have_content(post2.title)
@@ -23,7 +23,7 @@ RSpec.feature "Posts", type: :feature do
     scenario "site users should fail to list unpublished posts" do
 
       visit root_path
-      click_link('Home')
+      click_link('Blog')
 
       expect(page).not_to have_content(post1.body)
       expect(page).not_to have_content(post2.body)

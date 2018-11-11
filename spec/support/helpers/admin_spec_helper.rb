@@ -18,7 +18,7 @@ module AdminSpecHelper
     click_link('Edit')
     test_title = Faker::Lorem.word
     fill_in("post[title]", with: test_title)
-    click_button('Create Post')
+    click_button('Update Post')
 
     expect(page).to have_content("Post was succesfully updated!")
     expect(page).to have_content(test_title)
