@@ -6,11 +6,6 @@
         A place to read about web development code stories. Courtesy of <a href="#">Tony Njoku.</a>
         <div class="c-links">
           <%= link_to 'Home', root_path, class: "c-links__item c-links__item--current" %>
-          <% if logged_in %>
-            <%= link_to 'Logout', logout_path, class: "c-links__item" %>
-          <% else %>
-            <%= link_to 'Login', login_path, class: "c-links__item" %>
-          <% end %>
           <%= link_to 'About', about_path, class: "c-links__item" %>
           <%= link_to 'Projects', projects_path, class: "c-links__item" %>
           <%= render 'subscribers/form' %>
