@@ -8,6 +8,9 @@
   <div class="c-show-post__body">
     <p><%= markdown(@post.body) %></p>
   </div>
+  <div class="c-show-post__image">
+    <%= image_tag @post.avatar_thumbnail %>
+  </div>
   <% if logged_in %>
     <%= render 'comments/form' %>
     <%= render 'comments/comment' %>

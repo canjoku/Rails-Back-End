@@ -13,6 +13,7 @@ RSpec.feature "Posts", type: :feature do
       title = Faker::Lorem.word
       fill_in("post[title]", with: title)
       fill_in("post[body]", with: Faker::Lorem.paragraph)
+      attach_file "post[avatar]", "#{Rails.root}/spec/fixtures/files/test-image.png"
       click_button('Create Post')
 
       expect(page).to have_content("Post #{title} was succesfully created!")

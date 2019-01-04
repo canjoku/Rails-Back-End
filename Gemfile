@@ -8,7 +8,7 @@ end
 ruby '2.5.1'
 
 
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2', '>= 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -73,3 +73,9 @@ gem 'tzinfo-data', '~> 1.2018', '>= 1.2018.4', platforms: [:mingw, :mswin, :x64_
 gem 'graphiql-rails', '1.4.4', group: :development
 gem 'friendly_id', '~> 5.2', '>= 5.2.4'
 gem 'mini_racer', '~> 0.2.0'
+gem 'gibbon', '~> 3.2'
+gem "aws-sdk-s3", require: false
+gem 'certified', '~> 1.0'
+gem 'image_processing', '~> 1.7', '>= 1.7.1'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'bundler', '~> 1.11', '>= 1.11.2'

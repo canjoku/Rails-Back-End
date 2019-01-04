@@ -25,4 +25,4 @@ yarn-debug.log*
 /dump.rdb
 .env
 /public/packs
-/db/seeds.rb
+/public/system

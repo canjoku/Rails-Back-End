@@ -43,7 +43,7 @@ RSpec.describe Post, type: :model do
       post.status = "publish"
       post.save
 
-      expect { post.save }.to broadcast(:send_new_post_mail, post.id)
+      expect { post.save }.to broadcast(:send_new_post_notification)
     end
   end
 end

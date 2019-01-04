@@ -11,6 +11,8 @@
         <div class="form-group">
           <%= f.label :body %>
           <%= f.text_area :body, rows: 12, class: "form-control" %>
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar, direct_upload: true %>
         </div>
         <%= f.submit %>
       <% end %>

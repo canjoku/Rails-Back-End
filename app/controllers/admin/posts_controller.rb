@@ -52,7 +52,7 @@ class Admin::PostsController < Admin::ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :avatar)
   end
 
   def set_post

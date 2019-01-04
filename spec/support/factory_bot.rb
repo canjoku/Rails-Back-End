@@ -2,10 +2,13 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
 
+include ActionDispatch::TestProcess
+
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.word }
     body { Faker::Lorem.paragraph }
+    avatar { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test-image.png'), 'image/png')}
 
     trait :published do
       status { "published" }
