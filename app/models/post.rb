@@ -17,7 +17,7 @@ class Post < ApplicationRecord
   has_one_attached :avatar
 
   def avatar_thumbnail
-    self.avatar.variant(resize: '400x400')
+    self.avatar.variant(resize: '500x500')
   end
 
   private

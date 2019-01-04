@@ -2,14 +2,14 @@
   <h1 class="c-show-post__title">
     <%= @post.title %>
   </h1>
+  <div class="c-show-post__image">
+    <%= image_tag @post.avatar_thumbnail %>
+  </div>
   <div class="c-show-post__created-at">
     Created <%= time_ago_in_words(@post.created_at) %> ago
   </div>
   <div class="c-show-post__body">
     <p><%= markdown(@post.body) %></p>
-  </div>
-  <div class="c-show-post__image">
-    <%= image_tag @post.avatar_thumbnail %>
   </div>
   <% if logged_in %>
     <%= render 'comments/form' %>
