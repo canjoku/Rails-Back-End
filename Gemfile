@@ -7,10 +7,11 @@ end
 
 ruby '2.5.1'
 
+gem 'puma', '~> 3.12'
+
 
 gem 'rails', '~> 5.2', '>= 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
@@ -43,7 +44,6 @@ gem 'rouge', '~> 3.3'
 
 gem 'dalli', '~> 2.7', '>= 2.7.8'
 gem 'graphql', '~> 1.8', '>= 1.8.6'
-gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 
 group :development, :test do
   gem 'byebug', '~> 10.0', '>= 10.0.1', platforms: [:mri, :mingw, :x64_mingw]
