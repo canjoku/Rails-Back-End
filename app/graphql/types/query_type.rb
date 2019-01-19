@@ -1,12 +1,14 @@
 class Types::QueryType < Types::BaseObject
-  field :post, Types::PostType, null: true do
-    description "Returns a post with id given"
-    argument :id, ID, required: true
+
+  def post(slug:)
+    Post.friendly.find(slug)
   end
 
-  def post(id:)
-    Post.find(id)
+  field :post, Types::PostType, null: true do
+    description "Returns a post with slug given"
+    argument :slug, String, required: true
   end
+
 
   field :posts, [Types::PostType], null: false do
     description "Returns an array of all posts"
