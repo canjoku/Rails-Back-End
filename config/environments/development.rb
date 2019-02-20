@@ -1,4 +1,6 @@
 Rails.application.configure do
+
+  config.middleware.use Rack::Throttle::Second, max: 5
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

@@ -1,6 +1,0 @@
-<%= form_for @subscriber ||= Subscriber.new, html: { class: "c-subscriber-form"} do |f| %>
-  <div class="c-subscriber-form__email">
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <%= f.submit "Subscribe", class: "c-subscriber-form__btn" %>
-<% end %>

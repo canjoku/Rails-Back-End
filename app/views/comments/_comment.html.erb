@@ -1,9 +1,0 @@
-<% if @comments.any? %>
-  <% @comments.each do |comment| %>
-    <p class="c-comment">
-      <%= markdown(comment.body) %>
-    </p>
-  <% end %>
-<% else %>
-  <p>There are no comments to show </p>
-<% end %>

@@ -3,12 +3,9 @@
     <h1 class="c-header__title">TBlog Stories</h1>
     <div class="c-header_subtitle">
       <div class="c-header__description">
-        A place to read about web development code stories. Courtesy of <a href="#">Tony Njoku.</a>
         <div class="c-links">
-          <%= link_to 'Blog', root_path, class: "c-links__item c-links__item--current" %>
-          <%= link_to 'About', about_path, class: "c-links__item" %>
-          <%= link_to 'Projects', projects_path, class: "c-links__item" %>
-          <%= render 'subscribers/form' %>
+          <%= link_to 'Manage Posts', admin_posts_path, class: "c-links__item" %>
+          <%= link_to 'Create Post', new_admin_post_path, class: "c-links__item" %>
         </div> <!-- /header__links -->
       </div>
       <%= render "shared/notice_messages" %>

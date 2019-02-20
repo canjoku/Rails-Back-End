@@ -207,6 +207,9 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-throttle (0.7.0)
+      bundler (>= 1.0.0)
+      rack (>= 1.0.0)
     rails (5.2.2)
       actioncable (= 5.2.2)
       actionmailer (= 5.2.2)
@@ -368,6 +371,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.12)
   rack-cors (~> 1.0, >= 1.0.2)
+  rack-throttle (~> 0.7.0)
   rails (~> 5.2, >= 5.2.2)
   redcarpet (~> 3.4)
   rouge (~> 3.3)

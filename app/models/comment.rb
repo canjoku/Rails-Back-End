@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
 
   belongs_to :post
 
-  validates :body, presence: true
+  validates :body, :name, presence: true
 
   private
   def publish_creation

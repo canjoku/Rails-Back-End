@@ -6,7 +6,7 @@ RSpec.describe Types::PostType, type: :request do
     let!(:post) { create(:post) }
     let!(:query) do %|
       {
-        post(slug: #{post.title}) {
+        post(slug: #{post.slug}) {
           id
           title
           body

@@ -11,17 +11,5 @@
   <div class="c-show-post__body">
     <p><%= markdown(@post.body) %></p>
   </div>
-  <% if logged_in %>
-    <%= render 'comments/form' %>
-    <%= render 'comments/comment' %>
-  <% else %>
-    <div class="c-show-post__comments-notifier"> You will need to be logged on in order to leave comments </div>
-  <% end %>
-
-  <% if logged_in %>
-    <%= link_to 'Logout', logout_path, class: "c-links__item" %>
-  <% else %>
-    <%= link_to 'Login', login_path, class: "c-links__item" %>
-  <% end %>
 </div>
 

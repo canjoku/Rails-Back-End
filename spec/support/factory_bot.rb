@@ -7,6 +7,7 @@ include ActionDispatch::TestProcess
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.word }
+    slug { Faker::Lorem.word }
     body { Faker::Lorem.paragraph }
     avatar { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'files', 'test-image.png'), 'image/png')}
 
@@ -27,6 +28,8 @@ FactoryBot.define do
 
   factory :comment do
     body { Faker::Lorem.sentence }
+    name { Faker::Name.first_name }
+    picture { Faker::Internet.url }
     post
   end
 

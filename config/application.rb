@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require 'rack/throttle'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -9,13 +9,15 @@ Bundler.require(*Rails.groups)
 module MyBlog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
     config.middleware.insert_before 0, Rack::Cors do
+
       allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        origins 'http://localhost:3001', 'https://tn-blog.herokuapp.com'
+        resource '/graphql', headers: :any, methods: [:get, :post, :options]
       end
     end
-    config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

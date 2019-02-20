@@ -5,8 +5,12 @@ class Types::MutationType < Types::BaseObject
   end
 
   def create_comment(comment:)
-    post = Post.find(comment.post_id)
-    post.comments.create comment.to_h
+    if context.fetch(:authorised)
+      post = Post.friendly.find(comment.post_slug)
+      post.comments.create(name: comment.name, body: comment.body, picture: comment.picture)
+    else
+      GraphQL::ExecutionError.new("please login")
+    end
   end
 
   field :create_subscriber, Types::SubscriberType, null: true, description: "Creates a subscriber" do
@@ -23,7 +27,7 @@ class Types::MutationType < Types::BaseObject
 
   def update_comment(comment:)
     existing_comment = Comment.find(comment[:id])
-    existing_comment&.update comment.to_h
+    existing_comment&.update(name: comment.name, body: comment.body)
   end
 
   field :delete_comment, Boolean, null: true, description: "Deletes an existing comment" do

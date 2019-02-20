@@ -6,9 +6,11 @@ RSpec.describe Types::CommentType, type: :request do
     let!(:post) { create(:post) }
     let!(:query) do %|
       mutation{
-        createComment(comment: { postId: "#{post.id}", body: "Awesome post. Thank you" }){
+        createComment(comment: { postSlug: "#{post.slug}", name: "tony", body: "Awesome post. Thank you", picture: "path to picture" }){
           id
           body
+          name
+          picture
           post {
             id
             title
@@ -19,7 +21,9 @@ RSpec.describe Types::CommentType, type: :request do
     end
 
     let!(:result) do
-      MyBlogSchema.execute(query)
+      MyBlogSchema.execute(query, context: {
+        authorised: true
+      })
     end
 
     it "should return the associated post" do

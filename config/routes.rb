@@ -6,18 +6,6 @@ Rails.application.routes.draw do
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
 
-  root 'posts#index'
-  get 'auth/oauth2/callback', to: 'auth0#callback'
-  get 'auth/failure', to: 'auth0#failure'
-  get 'logout', to: 'auth0#logout'
-  get 'login', to: 'auth0#login'
-
-  get 'about', to: 'pages#about'
-  get 'projects', to: 'pages#projects'
-
-  resources :subscribers, only: [:create]
-
-
   resources :posts, only: [:show, :index] do
     resources :comments, only: [:create]
   end

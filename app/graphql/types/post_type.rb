@@ -22,4 +22,5 @@ class Types::PostType < Types::BaseObject
     Rails.application.routes.url_helpers.polymorphic_url(object.avatar_thumbnail, only_path: true)
   end
 
+
 end
