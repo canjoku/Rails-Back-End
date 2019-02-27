@@ -14,7 +14,7 @@ module MyBlog
     config.middleware.insert_before 0, Rack::Cors do
 
       allow do
-        origins 'http://localhost:3001', 'https://tn-blog.herokuapp.com'
+        origins 'http://localhost:3001', 'www.chidinjoku.co.uk', 'https://tn-blog.herokuapp.com'
         resource '/graphql', headers: :any, methods: [:get, :post, :options]
       end
     end
